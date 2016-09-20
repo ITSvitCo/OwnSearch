@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% set title = "Main" %}
+
+{% block content %}
+{% if text %}
+    {{ text }}
+{% else %}
+    <p>No text.</p>
+{% endif %}
+{% endblock %}
