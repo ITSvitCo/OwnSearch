@@ -1,0 +1,52 @@
+.form-control:focus {
+    box-shadow: none;
+    border-color: #4285f4;
+}
+.container-fluid {
+    padding: 0;
+}
+.head-wrap {
+    background: #F1F1F1;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 20px;
+}
+h1 {
+    margin: 5px 0 0;
+    font-weight: 600;
+    font-size: 20px;
+    float: left;
+    cursor: pointer;
+}
+h2 {
+    color: #1122cc;
+    font-size: 18px;
+    margin: 0;
+}
+.req-wrap {
+    margin-left: 130px;
+}
+.req-wrap div {
+    max-width: 500px;
+}
+.req-wrap input {
+    border-radius: 0;
+    font-size: 16px;
+    border-right: 0;
+}
+.req-wrap span {
+    border-radius: 0;
+    color: #fff;
+    background: #4285F4;
+    border: 0;
+    cursor: pointer;
+    font-size: 15px;
+}
+.result {
+    padding: 20px;   
+}
+.result > div + div {
+    margin-top: 15px;
+}
+.result .link a {
+    color: #070;
+}

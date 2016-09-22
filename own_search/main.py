@@ -12,7 +12,7 @@ import yaml
 from own_search.routes import setup_routes
 
 
-# PROJ_ROOT = pathlib.Path(__file__).parent
+PROJ_ROOT = pathlib.Path(__file__).parent
 
 
 def load_config(fname):
@@ -33,7 +33,7 @@ async def init(loop):
         app, loader=jinja2.PackageLoader('own_search', 'templates'))
 
     # setup views and routes
-    setup_routes(app)
+    setup_routes(app, PROJ_ROOT)
 
     host, port = conf['host'], conf['port']
     return app, host, port

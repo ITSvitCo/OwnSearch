@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     {% block head %}
-        <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/static/js/common.js"></script>
     {% endblock %}
-  </head>
-  <body>
-    <h1>{{title}}</h1>
-    <div>
-      {% block content %}
-      {% endblock %}
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="head-wrap">
+            <h1>OwnSearch</h1>
+            <div class="req-wrap">
+                <form id="req_form">
+                    <div class="input-group">
+                        <input placeholder="Type your request..." autocomplete="off" id="req" class="form-control" value="" type="text">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="result"></div>
     </div>
-  </body>
+</body>
 </html>
