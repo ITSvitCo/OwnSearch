@@ -11,17 +11,7 @@ async def index(request):
 
 
 async def query(request):
-    """Queries handler."""
-    search_results = {'items': [{'title': 'TITLE1',
-                                 'link': 'http://test.com.1',
-                                 'text': 'Text1'},
-                                {'title': 'TITLE2',
-                                 'link': 'http://test.com.2',
-                                 'text': 'Text2'},
-                                {'title': 'TITLE3',
-                                 'link': 'http://test.com.3',
-                                 'text': 'Text3'},
-                                ]}
-    import asyncio
-    await asyncio.sleep(1)
+    """Query handler."""
+    post = await request.post()
+    search_results = request.app['text_index'].query(post['query'])
     return json_response(search_results)

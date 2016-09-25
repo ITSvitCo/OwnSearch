@@ -23,7 +23,7 @@ $('#req_form').submit(function(e) {
             h2s: '<h2 class="title">',
             h2e: '</h2>',
             l:   '<div class="link">',
-            t:   '<div class="text">',
+            t:   '<div class="summary">',
             as:  '<a target="_blank" href="',
             ah:  '">',
             ae:  '</a>',
@@ -53,7 +53,7 @@ $('#req_form').submit(function(e) {
                         html += bl.s;
                             html += bl.h2s + res[key].title + bl.h2e;
                             html += bl.l + bl.as + res[key].link + bl.ah + res[key].link + bl.ae + bl.e;
-                            html += bl.t + res[key].text + bl.e;
+                            html += bl.t + res[key].summary + bl.e;
                         html += bl.e;
                     }
                 } else {

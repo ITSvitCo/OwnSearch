@@ -9,6 +9,7 @@ import aiohttp_jinja2
 import jinja2
 import yaml
 
+from indexer import TextIndex
 from own_search.routes import setup_routes
 
 
@@ -31,6 +32,9 @@ async def init(loop):
     app = web.Application(loop=loop)
     aiohttp_jinja2.setup(
         app, loader=jinja2.PackageLoader('own_search', 'templates'))
+
+    text_index = TextIndex()
+    app['text_index'] = text_index
 
     # setup views and routes
     setup_routes(app, PROJ_ROOT)
