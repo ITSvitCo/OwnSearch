@@ -1,5 +1,18 @@
+import asyncio
+import pytest
 import json
-from crawler.web_crawler import DataLinksHTMLParser
+from crawler.web_crawler import DataLinksHTMLParser, WebCrawler
+
+
+@pytest.yield_fixture
+def loop():
+    """Setup loop."""
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    yield loop
+
+    # Clean-up
+    loop.close()
 
 
 def test_HTML_parser():
@@ -18,3 +31,11 @@ def test_HTML_parser():
 
     assert parser.data == expected_data
     assert parser.links == expected_links
+
+
+# def test_hello(loop):
+#     async def do_test():
+#         wc = WebCrawler(loop=loop)
+#         data = await wc._parse_links('http://www.yandex.ru')
+#         print(data)
+#     loop.run_until_complete(do_test())
