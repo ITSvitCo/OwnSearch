@@ -11,6 +11,7 @@ import yaml
 
 from indexer import TextIndex
 from own_search.routes import setup_routes
+from crawler.web_crawler import WebCrawler
 
 
 PROJ_ROOT = pathlib.Path(__file__).parent
@@ -35,6 +36,10 @@ async def init(loop):
 
     text_index = TextIndex()
     app['text_index'] = text_index
+
+    crawler = WebCrawler(loop=loop)
+    await crawler.url_queue.put('https://yandex.ru/')
+    crawler.create_workers()
 
     # setup views and routes
     setup_routes(app, PROJ_ROOT)
