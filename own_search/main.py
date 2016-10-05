@@ -38,8 +38,9 @@ async def init(loop):
     app['text_index'] = text_index
 
     crawler = WebCrawler(loop=loop)
-    await crawler.url_queue.put('https://yandex.ru/')
+    await crawler.url_queue.put('http://yandex.ru/')
     crawler.create_workers()
+    crawler.register_consumer(text_index.index_document)
 
     # setup views and routes
     setup_routes(app, PROJ_ROOT)

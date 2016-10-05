@@ -5,6 +5,7 @@ from html.parser import HTMLParser
 from urllib.parse import urljoin
 
 import aiohttp
+import async_timeout
 
 
 class InvalidURL(RuntimeError):
@@ -41,7 +42,7 @@ class DataLinksHTMLParser(HTMLParser):
 
         elif tag in ('a', 'link'):
             for attr, value in attrs:
-                if attr == 'href':
+                if attr == 'href' and value is not None:
                     link = self._normalize_link(value)
                     if link:
                         self.links.add(link)
@@ -49,7 +50,11 @@ class DataLinksHTMLParser(HTMLParser):
     def handle_endtag(self, tag):
         """Seek for close script tag."""
         if tag in ('script', 'style'):
-            self.ignore_data.remove(tag)
+            try:
+                self.ignore_data.remove(tag)
+            except ValueError:
+                # Already closed tag
+                pass
 
     def handle_data(self, data):
         """Store data."""
@@ -62,7 +67,7 @@ class DataLinksHTMLParser(HTMLParser):
 class WebCrawler:
     """Asynchronous web crawler."""
 
-    def __init__(self, workers=50, ignore_external=True, loop=None):
+    def __init__(self, workers=20, ignore_external=True, loop=None):
         """Init crawler."""
         if loop is None:
             self.loop = asyncio.get_event_loop()
@@ -74,6 +79,7 @@ class WebCrawler:
         self.handled_urls = set()
         self.url_queue = asyncio.Queue()
         self.text_queue = asyncio.Queue()
+        self.consumer = None
 
     async def worker(self):
         """Crawl worker."""
@@ -102,35 +108,46 @@ class WebCrawler:
         """Parse web page content for external & internal links."""
         parser = DataLinksHTMLParser(base_url=url)
 
-        async with aiohttp.ClientSession() as session:
-            resp = None
-            try:
-                resp = await session.get(url)
-                # TODO: verify content type
-                # TODO: list of valid status codes
+        # TODO: add retry count
+        try:
+            with async_timeout.timeout(10):
+                async with aiohttp.ClientSession() as session:
+                    resp = None
+                    try:
+                        resp = await session.get(url)
+                        # TODO: verify content type
+                        # TODO: list of valid status codes
 
-            except (ValueError,
-                    aiohttp.errors.ClientResponseError,
-                    aiohttp.errors.ClientRequestError):
-                # ValueError: Host could not be detected.
-                # aiohttp.errors.ClientResponseError
-                # Can not write request body for
-                raise InvalidURL()
-            else:
-                if resp is None or resp.status != 200:
-                    raise InvalidURL()
+                    except (ValueError,
+                            aiohttp.errors.ClientResponseError,
+                            aiohttp.errors.ClientRequestError,
+                            aiohttp.errors.ClientOSError):
+                        # ValueError: Host could not be detected.
+                        # aiohttp.errors.ClientResponseError
+                        # Can not write request body for
+                        # [Errno 10060] Cannot connect to host
+                        raise InvalidURL()
+                    else:
+                        if resp is None or resp.status != 200:
+                            raise InvalidURL()
 
-                try:
-                    resp_text = await resp.text()
-                except UnicodeDecodeError:
-                    raise InvalidURL()
+                        try:
+                            # TODO: detect charset without chardet!!!
+                            resp_text = await resp.text("utf-8")
+                        except UnicodeDecodeError:
+                            raise InvalidURL()
 
-                parser.feed(resp_text)
 
-            finally:
-                if resp is not None:
-                    resp.close()
 
+                    finally:
+                        if resp is not None:
+                            resp.close()
+
+        except asyncio.TimeoutError:
+            # print('Timeout', url)
+            raise InvalidURL()
+
+        parser.feed(resp_text)
         # TODO: recognize internal/external urls
         text = ' '.join(parser.data)
         internal = parser.links
@@ -139,6 +156,15 @@ class WebCrawler:
         parser.close()
         return text, internal, external
 
+    async def _feed_consumer(self):
+        while self.consumer is not None:
+            url, text = await self.text_queue.get()
+            self.consumer(text, 'Title', url)
+
     def create_workers(self):
         for _ in range(self.workers):
             self.loop.create_task(self.worker())
+        self.loop.create_task(self._feed_consumer())
+
+    def register_consumer(self, consumer):
+        self.consumer = consumer
