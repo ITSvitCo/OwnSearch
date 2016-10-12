@@ -38,7 +38,7 @@ async def init(loop):
     app['text_index'] = text_index
 
     crawler = WebCrawler(loop=loop)
-    await crawler.url_queue.put('http://yandex.ru/')
+    await crawler.url_queue.put('http://yandex.ua/')
     crawler.create_workers()
     crawler.register_consumer(text_index.index_document)
 

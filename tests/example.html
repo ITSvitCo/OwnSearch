@@ -66,9 +66,9 @@ READTHEDOCS_DATA['page'] = 'web_reference'
           <div class="body" role="main">
             
   <div class="section" id="module-aiohttp.web">
-<span id="http-server-reference"></span><span id="aiohttp-web-reference"></span><h1>HTTP Server Reference<a class="headerlink" href="#module-aiohttp.web" title="Permalink to this headline">¶</a></h1>
+<span id="http-server-reference"></span><span id="aiohttp-web-reference"></span><h1>HTTP Server Reference<a class="headerlink" href="#module-aiohttp.web" title="Permalink to this headline"></a></h1>
 <div class="section" id="request">
-<span id="aiohttp-web-request"></span><h2>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h2>
+<span id="aiohttp-web-request"></span><h2>Request<a class="headerlink" href="#request" title="Permalink to this headline"></a></h2>
 <p>The Request object contains all the information about an incoming HTTP request.</p>
 <p>Every <a class="reference internal" href="web.html#aiohttp-web-handler"><span>handler</span></a> accepts a request instance as the
 first positional parameter.</p>
@@ -84,10 +84,10 @@ like one using <code class="xref py py-meth docutils literal"><span class="pre">
 </div>
 <dl class="class">
 <dt id="aiohttp.web.Request">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">Request</code><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">Request</code><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request" title="Permalink to this definition"></a></dt>
 <dd><dl class="attribute">
 <dt id="aiohttp.web.Request.scheme">
-<code class="descname">scheme</code><a class="headerlink" href="#aiohttp.web.Request.scheme" title="Permalink to this definition">¶</a></dt>
+<code class="descname">scheme</code><a class="headerlink" href="#aiohttp.web.Request.scheme" title="Permalink to this definition"></a></dt>
 <dd><p>A string representing the scheme of the request.</p>
 <p>The scheme is <code class="docutils literal"><span class="pre">'https'</span></code> if transport for request handling is
 <em>SSL</em> or <code class="docutils literal"><span class="pre">secure_proxy_ssl_header</span></code> is matching.</p>
@@ -101,7 +101,7 @@ like one using <code class="xref py py-meth docutils literal"><span class="pre">
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.method">
-<code class="descname">method</code><a class="headerlink" href="#aiohttp.web.Request.method" title="Permalink to this definition">¶</a></dt>
+<code class="descname">method</code><a class="headerlink" href="#aiohttp.web.Request.method" title="Permalink to this definition"></a></dt>
 <dd><p><em>HTTP method</em>, read-only property.</p>
 <p>The value is upper-cased <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> like <code class="docutils literal"><span class="pre">&quot;GET&quot;</span></code>,
 <code class="docutils literal"><span class="pre">&quot;POST&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;PUT&quot;</span></code> etc.</p>
@@ -109,28 +109,28 @@ like one using <code class="xref py py-meth docutils literal"><span class="pre">
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.version">
-<code class="descname">version</code><a class="headerlink" href="#aiohttp.web.Request.version" title="Permalink to this definition">¶</a></dt>
+<code class="descname">version</code><a class="headerlink" href="#aiohttp.web.Request.version" title="Permalink to this definition"></a></dt>
 <dd><p><em>HTTP version</em> of request, Read-only property.</p>
 <p>Returns <code class="xref py py-class docutils literal"><span class="pre">aiohttp.protocol.HttpVersion</span></code> instance.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.host">
-<code class="descname">host</code><a class="headerlink" href="#aiohttp.web.Request.host" title="Permalink to this definition">¶</a></dt>
+<code class="descname">host</code><a class="headerlink" href="#aiohttp.web.Request.host" title="Permalink to this definition"></a></dt>
 <dd><p><em>HOST</em> header of request, Read-only property.</p>
 <p>Returns <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> or <code class="docutils literal"><span class="pre">None</span></code> if HTTP request has no <em>HOST</em> header.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.path_qs">
-<code class="descname">path_qs</code><a class="headerlink" href="#aiohttp.web.Request.path_qs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">path_qs</code><a class="headerlink" href="#aiohttp.web.Request.path_qs" title="Permalink to this definition"></a></dt>
 <dd><p>The URL including PATH_INFO and the query string. e.g., <code class="docutils literal"><span class="pre">/app/blog?id=10</span></code></p>
 <p>Read-only <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> property.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.path">
-<code class="descname">path</code><a class="headerlink" href="#aiohttp.web.Request.path" title="Permalink to this definition">¶</a></dt>
+<code class="descname">path</code><a class="headerlink" href="#aiohttp.web.Request.path" title="Permalink to this definition"></a></dt>
 <dd><p>The URL including <em>PATH INFO</em> without the host or scheme. e.g.,
 <code class="docutils literal"><span class="pre">/app/blog</span></code>. The path is URL-unquoted. For raw path info see
 <a class="reference internal" href="#aiohttp.web.Request.raw_path" title="aiohttp.web.Request.raw_path"><code class="xref py py-attr docutils literal"><span class="pre">raw_path</span></code></a>.</p>
@@ -139,7 +139,7 @@ like one using <code class="xref py py-meth docutils literal"><span class="pre">
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.raw_path">
-<code class="descname">raw_path</code><a class="headerlink" href="#aiohttp.web.Request.raw_path" title="Permalink to this definition">¶</a></dt>
+<code class="descname">raw_path</code><a class="headerlink" href="#aiohttp.web.Request.raw_path" title="Permalink to this definition"></a></dt>
 <dd><p>The URL including raw <em>PATH INFO</em> without the host or scheme.
 Warning, the path may be quoted and may contains non valid URL
 characters, e.g.
@@ -150,14 +150,14 @@ characters, e.g.
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.query_string">
-<code class="descname">query_string</code><a class="headerlink" href="#aiohttp.web.Request.query_string" title="Permalink to this definition">¶</a></dt>
+<code class="descname">query_string</code><a class="headerlink" href="#aiohttp.web.Request.query_string" title="Permalink to this definition"></a></dt>
 <dd><p>The query string in the URL, e.g., <code class="docutils literal"><span class="pre">id=10</span></code></p>
 <p>Read-only <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> property.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.GET">
-<code class="descname">GET</code><a class="headerlink" href="#aiohttp.web.Request.GET" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GET</code><a class="headerlink" href="#aiohttp.web.Request.GET" title="Permalink to this definition"></a></dt>
 <dd><p>A multidict with all the variables in the query string.</p>
 <p>Read-only <a class="reference external" href="https://multidict.readthedocs.io/en/stable/multidict.html#multidict.MultiDictProxy" title="(in multidict v2.1)"><code class="xref py py-class docutils literal"><span class="pre">MultiDictProxy</span></code></a> lazy property.</p>
 <div class="versionchanged">
@@ -167,7 +167,7 @@ characters, e.g.
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.POST">
-<code class="descname">POST</code><a class="headerlink" href="#aiohttp.web.Request.POST" title="Permalink to this definition">¶</a></dt>
+<code class="descname">POST</code><a class="headerlink" href="#aiohttp.web.Request.POST" title="Permalink to this definition"></a></dt>
 <dd><p>A multidict with all the variables in the POST parameters.
 POST property available only after <a class="reference internal" href="#aiohttp.web.Request.post" title="aiohttp.web.Request.post"><code class="xref py py-meth docutils literal"><span class="pre">Request.post()</span></code></a> coroutine call.</p>
 <p>Read-only <a class="reference external" href="https://multidict.readthedocs.io/en/stable/multidict.html#multidict.MultiDictProxy" title="(in multidict v2.1)"><code class="xref py py-class docutils literal"><span class="pre">MultiDictProxy</span></code></a>.</p>
@@ -183,21 +183,21 @@ POST property available only after <a class="reference internal" href="#aiohttp.
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.headers">
-<code class="descname">headers</code><a class="headerlink" href="#aiohttp.web.Request.headers" title="Permalink to this definition">¶</a></dt>
+<code class="descname">headers</code><a class="headerlink" href="#aiohttp.web.Request.headers" title="Permalink to this definition"></a></dt>
 <dd><p>A case-insensitive multidict proxy with all headers.</p>
 <p>Read-only <a class="reference external" href="https://multidict.readthedocs.io/en/stable/multidict.html#multidict.CIMultiDictProxy" title="(in multidict v2.1)"><code class="xref py py-class docutils literal"><span class="pre">CIMultiDictProxy</span></code></a> property.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.raw_headers">
-<code class="descname">raw_headers</code><a class="headerlink" href="#aiohttp.web.Request.raw_headers" title="Permalink to this definition">¶</a></dt>
+<code class="descname">raw_headers</code><a class="headerlink" href="#aiohttp.web.Request.raw_headers" title="Permalink to this definition"></a></dt>
 <dd><p>HTTP headers of response as unconverted bytes, a sequence of
 <code class="docutils literal"><span class="pre">(key,</span> <span class="pre">value)</span></code> pairs.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.keep_alive">
-<code class="descname">keep_alive</code><a class="headerlink" href="#aiohttp.web.Request.keep_alive" title="Permalink to this definition">¶</a></dt>
+<code class="descname">keep_alive</code><a class="headerlink" href="#aiohttp.web.Request.keep_alive" title="Permalink to this definition"></a></dt>
 <dd><p><code class="docutils literal"><span class="pre">True</span></code> if keep-alive connection enabled by HTTP client and
 protocol version supports it, otherwise <code class="docutils literal"><span class="pre">False</span></code>.</p>
 <p>Read-only <a class="reference external" href="http://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a> property.</p>
@@ -205,7 +205,7 @@ protocol version supports it, otherwise <code class="docutils literal"><span cla
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.match_info">
-<code class="descname">match_info</code><a class="headerlink" href="#aiohttp.web.Request.match_info" title="Permalink to this definition">¶</a></dt>
+<code class="descname">match_info</code><a class="headerlink" href="#aiohttp.web.Request.match_info" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only property with <code class="xref py py-class docutils literal"><span class="pre">AbstractMatchInfo</span></code>
 instance for result of route resolving.</p>
 <div class="admonition note">
@@ -218,13 +218,13 @@ instance for result of route resolving.</p>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.app">
-<code class="descname">app</code><a class="headerlink" href="#aiohttp.web.Request.app" title="Permalink to this definition">¶</a></dt>
+<code class="descname">app</code><a class="headerlink" href="#aiohttp.web.Request.app" title="Permalink to this definition"></a></dt>
 <dd><p>An <a class="reference internal" href="#aiohttp.web.Application" title="aiohttp.web.Application"><code class="xref py py-class docutils literal"><span class="pre">Application</span></code></a> instance used to call <a class="reference internal" href="web.html#aiohttp-web-handler"><span>request handler</span></a>, Read-only property.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.transport">
-<code class="descname">transport</code><a class="headerlink" href="#aiohttp.web.Request.transport" title="Permalink to this definition">¶</a></dt>
+<code class="descname">transport</code><a class="headerlink" href="#aiohttp.web.Request.transport" title="Permalink to this definition"></a></dt>
 <dd><p>An <a class="reference external" href="http://docs.python.org/3/library/asyncio-protocol.html#asyncio-transport" title="(in Python v3.5)"><span class="xref std std-ref">transport</span></a> used to process request,
 Read-only property.</p>
 <p>The property can be used, for example, for getting IP address of
@@ -238,14 +238,14 @@ client&#8217;s peer:</p>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.cookies">
-<code class="descname">cookies</code><a class="headerlink" href="#aiohttp.web.Request.cookies" title="Permalink to this definition">¶</a></dt>
+<code class="descname">cookies</code><a class="headerlink" href="#aiohttp.web.Request.cookies" title="Permalink to this definition"></a></dt>
 <dd><p>A multidict of all request&#8217;s cookies.</p>
 <p>Read-only <a class="reference external" href="https://multidict.readthedocs.io/en/stable/multidict.html#multidict.MultiDictProxy" title="(in multidict v2.1)"><code class="xref py py-class docutils literal"><span class="pre">MultiDictProxy</span></code></a> lazy property.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.content">
-<code class="descname">content</code><a class="headerlink" href="#aiohttp.web.Request.content" title="Permalink to this definition">¶</a></dt>
+<code class="descname">content</code><a class="headerlink" href="#aiohttp.web.Request.content" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference internal" href="streams.html#aiohttp.StreamReader" title="aiohttp.StreamReader"><code class="xref py py-class docutils literal"><span class="pre">StreamReader</span></code></a> instance,
 input stream for reading request&#8217;s <em>BODY</em>.</p>
 <p>Read-only property.</p>
@@ -253,7 +253,7 @@ input stream for reading request&#8217;s <em>BODY</em>.</p>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.has_body">
-<code class="descname">has_body</code><a class="headerlink" href="#aiohttp.web.Request.has_body" title="Permalink to this definition">¶</a></dt>
+<code class="descname">has_body</code><a class="headerlink" href="#aiohttp.web.Request.has_body" title="Permalink to this definition"></a></dt>
 <dd><p>Return <code class="docutils literal"><span class="pre">True</span></code> if request has <em>HTTP BODY</em>, <code class="docutils literal"><span class="pre">False</span></code> otherwise.</p>
 <p>Read-only <a class="reference external" href="http://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a> property.</p>
 <div class="versionadded">
@@ -263,7 +263,7 @@ input stream for reading request&#8217;s <em>BODY</em>.</p>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.content_type">
-<code class="descname">content_type</code><a class="headerlink" href="#aiohttp.web.Request.content_type" title="Permalink to this definition">¶</a></dt>
+<code class="descname">content_type</code><a class="headerlink" href="#aiohttp.web.Request.content_type" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only property with <em>content</em> part of <em>Content-Type</em> header.</p>
 <p>Returns <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> like <code class="docutils literal"><span class="pre">'text/html'</span></code></p>
 <div class="admonition note">
@@ -276,7 +276,7 @@ Content-Type header present in HTTP headers according to
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.charset">
-<code class="descname">charset</code><a class="headerlink" href="#aiohttp.web.Request.charset" title="Permalink to this definition">¶</a></dt>
+<code class="descname">charset</code><a class="headerlink" href="#aiohttp.web.Request.charset" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only property that specifies the <em>encoding</em> for the request&#8217;s BODY.</p>
 <p>The value is parsed from the <em>Content-Type</em> HTTP header.</p>
 <p>Returns <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> like <code class="docutils literal"><span class="pre">'utf-8'</span></code> or <code class="docutils literal"><span class="pre">None</span></code> if
@@ -285,7 +285,7 @@ Content-Type header present in HTTP headers according to
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.content_length">
-<code class="descname">content_length</code><a class="headerlink" href="#aiohttp.web.Request.content_length" title="Permalink to this definition">¶</a></dt>
+<code class="descname">content_length</code><a class="headerlink" href="#aiohttp.web.Request.content_length" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only property that returns length of the request&#8217;s BODY.</p>
 <p>The value is parsed from the <em>Content-Length</em> HTTP header.</p>
 <p>Returns <a class="reference external" href="http://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a> or <code class="docutils literal"><span class="pre">None</span></code> if <em>Content-Length</em> is absent.</p>
@@ -293,7 +293,7 @@ Content-Type header present in HTTP headers according to
 
 <dl class="attribute">
 <dt id="aiohttp.web.Request.if_modified_since">
-<code class="descname">if_modified_since</code><a class="headerlink" href="#aiohttp.web.Request.if_modified_since" title="Permalink to this definition">¶</a></dt>
+<code class="descname">if_modified_since</code><a class="headerlink" href="#aiohttp.web.Request.if_modified_since" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only property that returns the date specified in the
 <em>If-Modified-Since</em> header.</p>
 <p>Returns <a class="reference external" href="http://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">datetime.datetime</span></code></a> or <code class="docutils literal"><span class="pre">None</span></code> if
@@ -303,7 +303,7 @@ HTTP date.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.Request.read">
-<em class="property">coroutine </em><code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request.read" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request.read" title="Permalink to this definition"></a></dt>
 <dd><p>Read request body, returns <a class="reference external" href="http://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a> object with body content.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -314,7 +314,7 @@ HTTP date.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.Request.text">
-<em class="property">coroutine </em><code class="descname">text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request.text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request.text" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request.text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request.text" title="Permalink to this definition"></a></dt>
 <dd><p>Read request body, decode it using <a class="reference internal" href="#aiohttp.web.Request.charset" title="aiohttp.web.Request.charset"><code class="xref py py-attr docutils literal"><span class="pre">charset</span></code></a> encoding or
 <code class="docutils literal"><span class="pre">UTF-8</span></code> if no encoding was specified in <em>MIME-type</em>.</p>
 <p>Returns <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> with body content.</p>
@@ -327,7 +327,7 @@ HTTP date.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.Request.json">
-<em class="property">coroutine </em><code class="descname">json</code><span class="sig-paren">(</span><em>*</em>, <em>loads=json.loads</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request.json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request.json" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">json</code><span class="sig-paren">(</span><em>*</em>, <em>loads=json.loads</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request.json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request.json" title="Permalink to this definition"></a></dt>
 <dd><p>Read request body decoded as <em>json</em>.</p>
 <p>The method is just a boilerplate <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a>
 implemented as:</p>
@@ -356,7 +356,7 @@ default).</td>
 
 <dl class="method">
 <dt id="aiohttp.web.Request.multipart">
-<em class="property">coroutine </em><code class="descname">multipart</code><span class="sig-paren">(</span><em>*</em>, <em>reader=aiohttp.multipart.MultipartReader</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request.multipart"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request.multipart" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">multipart</code><span class="sig-paren">(</span><em>*</em>, <em>reader=aiohttp.multipart.MultipartReader</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request.multipart"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request.multipart" title="Permalink to this definition"></a></dt>
 <dd><p>Returns <a class="reference internal" href="api.html#aiohttp.multipart.MultipartReader" title="aiohttp.multipart.MultipartReader"><code class="xref py py-class docutils literal"><span class="pre">aiohttp.multipart.MultipartReader</span></code></a> which processes
 incoming <em>multipart</em> request.</p>
 <p>The method is just a boilerplate <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a>
@@ -380,7 +380,7 @@ more time.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.Request.post">
-<em class="property">coroutine </em><code class="descname">post</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request.post"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request.post" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">post</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request.post"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request.post" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> that reads POST parameters from
 request body.</p>
 <p>Returns <a class="reference external" href="https://multidict.readthedocs.io/en/stable/multidict.html#multidict.MultiDictProxy" title="(in multidict v2.1)"><code class="xref py py-class docutils literal"><span class="pre">MultiDictProxy</span></code></a> instance filled
@@ -398,7 +398,7 @@ returns empty multidict.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.Request.release">
-<em class="property">coroutine </em><code class="descname">release</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request.release"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request.release" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">release</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Request.release"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Request.release" title="Permalink to this definition"></a></dt>
 <dd><p>Release request.</p>
 <p>Eat unread part of HTTP BODY if present.</p>
 <div class="admonition note">
@@ -413,7 +413,7 @@ internal machinery.</p>
 
 </div>
 <div class="section" id="response-classes">
-<span id="aiohttp-web-response"></span><h2>Response classes<a class="headerlink" href="#response-classes" title="Permalink to this headline">¶</a></h2>
+<span id="aiohttp-web-response"></span><h2>Response classes<a class="headerlink" href="#response-classes" title="Permalink to this headline"></a></h2>
 <p>For now, <a class="reference internal" href="#module-aiohttp.web" title="aiohttp.web"><code class="xref py py-mod docutils literal"><span class="pre">aiohttp.web</span></code></a> has two classes for the <em>HTTP response</em>:
 <a class="reference internal" href="#aiohttp.web.StreamResponse" title="aiohttp.web.StreamResponse"><code class="xref py py-class docutils literal"><span class="pre">StreamResponse</span></code></a> and <a class="reference internal" href="#aiohttp.web.Response" title="aiohttp.web.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a>.</p>
 <p>Usually you need to use the second one. <a class="reference internal" href="#aiohttp.web.StreamResponse" title="aiohttp.web.StreamResponse"><code class="xref py py-class docutils literal"><span class="pre">StreamResponse</span></code></a> is
@@ -433,10 +433,10 @@ correct <em>Content-Length HTTP header</em>.</p>
 </pre></div>
 </div>
 <div class="section" id="streamresponse">
-<h3>StreamResponse<a class="headerlink" href="#streamresponse" title="Permalink to this headline">¶</a></h3>
+<h3>StreamResponse<a class="headerlink" href="#streamresponse" title="Permalink to this headline"></a></h3>
 <dl class="class">
 <dt id="aiohttp.web.StreamResponse">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">StreamResponse</code><span class="sig-paren">(</span><em>*</em>, <em>status=200</em>, <em>reason=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">StreamResponse</code><span class="sig-paren">(</span><em>*</em>, <em>status=200</em>, <em>reason=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse" title="Permalink to this definition"></a></dt>
 <dd><p>The base class for the <em>HTTP response</em> handling.</p>
 <p>Contains methods for setting <em>HTTP response headers</em>, <em>cookies</em>,
 <em>response status code</em>, writing <em>HTTP response BODY</em> and so on.</p>
@@ -464,7 +464,7 @@ arbitrary <em>status</em> explanation..</li>
 </table>
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.prepared">
-<code class="descname">prepared</code><a class="headerlink" href="#aiohttp.web.StreamResponse.prepared" title="Permalink to this definition">¶</a></dt>
+<code class="descname">prepared</code><a class="headerlink" href="#aiohttp.web.StreamResponse.prepared" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only <a class="reference external" href="http://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a> property, <code class="docutils literal"><span class="pre">True</span></code> if <a class="reference internal" href="#aiohttp.web.StreamResponse.prepare" title="aiohttp.web.StreamResponse.prepare"><code class="xref py py-meth docutils literal"><span class="pre">prepare()</span></code></a> has
 been called, <code class="docutils literal"><span class="pre">False</span></code> otherwise.</p>
 <div class="versionadded">
@@ -474,7 +474,7 @@ been called, <code class="docutils literal"><span class="pre">False</span></code
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.started">
-<code class="descname">started</code><a class="headerlink" href="#aiohttp.web.StreamResponse.started" title="Permalink to this definition">¶</a></dt>
+<code class="descname">started</code><a class="headerlink" href="#aiohttp.web.StreamResponse.started" title="Permalink to this definition"></a></dt>
 <dd><p>Deprecated alias for <a class="reference internal" href="#aiohttp.web.StreamResponse.prepared" title="aiohttp.web.StreamResponse.prepared"><code class="xref py py-attr docutils literal"><span class="pre">prepared</span></code></a>.</p>
 <div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.18.</span></p>
@@ -483,41 +483,41 @@ been called, <code class="docutils literal"><span class="pre">False</span></code
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.status">
-<code class="descname">status</code><a class="headerlink" href="#aiohttp.web.StreamResponse.status" title="Permalink to this definition">¶</a></dt>
+<code class="descname">status</code><a class="headerlink" href="#aiohttp.web.StreamResponse.status" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only property for <em>HTTP response status code</em>, <a class="reference external" href="http://docs.python.org/3/library/functions.html#int" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">int</span></code></a>.</p>
 <p><code class="docutils literal"><span class="pre">200</span></code> (OK) by default.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.reason">
-<code class="descname">reason</code><a class="headerlink" href="#aiohttp.web.StreamResponse.reason" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reason</code><a class="headerlink" href="#aiohttp.web.StreamResponse.reason" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only property for <em>HTTP response reason</em>, <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.set_status">
-<code class="descname">set_status</code><span class="sig-paren">(</span><em>status</em>, <em>reason=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.set_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.set_status" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_status</code><span class="sig-paren">(</span><em>status</em>, <em>reason=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.set_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.set_status" title="Permalink to this definition"></a></dt>
 <dd><p>Set <a class="reference internal" href="#aiohttp.web.StreamResponse.status" title="aiohttp.web.StreamResponse.status"><code class="xref py py-attr docutils literal"><span class="pre">status</span></code></a> and <a class="reference internal" href="#aiohttp.web.StreamResponse.reason" title="aiohttp.web.StreamResponse.reason"><code class="xref py py-attr docutils literal"><span class="pre">reason</span></code></a>.</p>
 <p><em>reason</em> value is auto calculated if not specified (<code class="docutils literal"><span class="pre">None</span></code>).</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.keep_alive">
-<code class="descname">keep_alive</code><a class="headerlink" href="#aiohttp.web.StreamResponse.keep_alive" title="Permalink to this definition">¶</a></dt>
+<code class="descname">keep_alive</code><a class="headerlink" href="#aiohttp.web.StreamResponse.keep_alive" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only property, copy of <a class="reference internal" href="#aiohttp.web.Request.keep_alive" title="aiohttp.web.Request.keep_alive"><code class="xref py py-attr docutils literal"><span class="pre">Request.keep_alive</span></code></a> by default.</p>
 <p>Can be switched to <code class="docutils literal"><span class="pre">False</span></code> by <a class="reference internal" href="#aiohttp.web.StreamResponse.force_close" title="aiohttp.web.StreamResponse.force_close"><code class="xref py py-meth docutils literal"><span class="pre">force_close()</span></code></a> call.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.force_close">
-<code class="descname">force_close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.force_close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.force_close" title="Permalink to this definition">¶</a></dt>
+<code class="descname">force_close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.force_close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.force_close" title="Permalink to this definition"></a></dt>
 <dd><p>Disable <a class="reference internal" href="#aiohttp.web.StreamResponse.keep_alive" title="aiohttp.web.StreamResponse.keep_alive"><code class="xref py py-attr docutils literal"><span class="pre">keep_alive</span></code></a> for connection. There are no ways to
 enable it back.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.compression">
-<code class="descname">compression</code><a class="headerlink" href="#aiohttp.web.StreamResponse.compression" title="Permalink to this definition">¶</a></dt>
+<code class="descname">compression</code><a class="headerlink" href="#aiohttp.web.StreamResponse.compression" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only <a class="reference external" href="http://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a> property, <code class="docutils literal"><span class="pre">True</span></code> if compression is enabled.</p>
 <p><code class="docutils literal"><span class="pre">False</span></code> by default.</p>
 <div class="admonition seealso">
@@ -528,7 +528,7 @@ enable it back.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.enable_compression">
-<code class="descname">enable_compression</code><span class="sig-paren">(</span><em>force=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.enable_compression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.enable_compression" title="Permalink to this definition">¶</a></dt>
+<code class="descname">enable_compression</code><span class="sig-paren">(</span><em>force=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.enable_compression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.enable_compression" title="Permalink to this definition"></a></dt>
 <dd><p>Enable compression.</p>
 <p>When <em>force</em> is unset compression encoding is selected based on
 the request&#8217;s <em>Accept-Encoding</em> header.</p>
@@ -542,7 +542,7 @@ the request&#8217;s <em>Accept-Encoding</em> header.</p>
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.chunked">
-<code class="descname">chunked</code><a class="headerlink" href="#aiohttp.web.StreamResponse.chunked" title="Permalink to this definition">¶</a></dt>
+<code class="descname">chunked</code><a class="headerlink" href="#aiohttp.web.StreamResponse.chunked" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only property, indicates if chunked encoding is on.</p>
 <p>Can be enabled by <a class="reference internal" href="#aiohttp.web.StreamResponse.enable_chunked_encoding" title="aiohttp.web.StreamResponse.enable_chunked_encoding"><code class="xref py py-meth docutils literal"><span class="pre">enable_chunked_encoding()</span></code></a> call.</p>
 <div class="admonition seealso">
@@ -553,7 +553,7 @@ the request&#8217;s <em>Accept-Encoding</em> header.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.enable_chunked_encoding">
-<code class="descname">enable_chunked_encoding</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.enable_chunked_encoding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.enable_chunked_encoding" title="Permalink to this definition">¶</a></dt>
+<code class="descname">enable_chunked_encoding</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.enable_chunked_encoding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.enable_chunked_encoding" title="Permalink to this definition"></a></dt>
 <dd><p>Enables <a class="reference internal" href="#aiohttp.web.StreamResponse.chunked" title="aiohttp.web.StreamResponse.chunked"><code class="xref py py-attr docutils literal"><span class="pre">chunked</span></code></a> encoding for response. There are no ways to
 disable it back. With enabled <a class="reference internal" href="#aiohttp.web.StreamResponse.chunked" title="aiohttp.web.StreamResponse.chunked"><code class="xref py py-attr docutils literal"><span class="pre">chunked</span></code></a> encoding each <cite>write()</cite>
 operation encoded in separate chunk.</p>
@@ -571,14 +571,14 @@ encoding is mutually exclusive.</p>
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.headers">
-<code class="descname">headers</code><a class="headerlink" href="#aiohttp.web.StreamResponse.headers" title="Permalink to this definition">¶</a></dt>
+<code class="descname">headers</code><a class="headerlink" href="#aiohttp.web.StreamResponse.headers" title="Permalink to this definition"></a></dt>
 <dd><p><code class="xref py py-class docutils literal"><span class="pre">CIMultiiDct</span></code> instance
 for <em>outgoing</em> <em>HTTP headers</em>.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.cookies">
-<code class="descname">cookies</code><a class="headerlink" href="#aiohttp.web.StreamResponse.cookies" title="Permalink to this definition">¶</a></dt>
+<code class="descname">cookies</code><a class="headerlink" href="#aiohttp.web.StreamResponse.cookies" title="Permalink to this definition"></a></dt>
 <dd><p>An instance of <a class="reference external" href="http://docs.python.org/3/library/http.cookies.html#http.cookies.SimpleCookie" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">http.cookies.SimpleCookie</span></code></a> for <em>outgoing</em> cookies.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -592,7 +592,7 @@ manipulations.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.set_cookie">
-<code class="descname">set_cookie</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>*</em>, <em>path='/'</em>, <em>expires=None</em>, <em>domain=None</em>, <em>max_age=None</em>, <em>secure=None</em>, <em>httponly=None</em>, <em>version=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.set_cookie"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.set_cookie" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_cookie</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>*</em>, <em>path='/'</em>, <em>expires=None</em>, <em>domain=None</em>, <em>max_age=None</em>, <em>secure=None</em>, <em>httponly=None</em>, <em>version=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.set_cookie"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.set_cookie" title="Permalink to this definition"></a></dt>
 <dd><p>Convenient way for setting <a class="reference internal" href="#aiohttp.web.StreamResponse.cookies" title="aiohttp.web.StreamResponse.cookies"><code class="xref py py-attr docutils literal"><span class="pre">cookies</span></code></a>, allows to specify
 some additional properties like <em>max_age</em> in a single call.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -646,7 +646,7 @@ and IE8) <strong>does not</strong> support <code class="docutils literal"><span 
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.del_cookie">
-<code class="descname">del_cookie</code><span class="sig-paren">(</span><em>name</em>, <em>*</em>, <em>path='/'</em>, <em>domain=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.del_cookie"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.del_cookie" title="Permalink to this definition">¶</a></dt>
+<code class="descname">del_cookie</code><span class="sig-paren">(</span><em>name</em>, <em>*</em>, <em>path='/'</em>, <em>domain=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.del_cookie"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.del_cookie" title="Permalink to this definition"></a></dt>
 <dd><p>Deletes cookie.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -669,26 +669,26 @@ Internet Explorer (version less than 11).</p>
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.content_length">
-<code class="descname">content_length</code><a class="headerlink" href="#aiohttp.web.StreamResponse.content_length" title="Permalink to this definition">¶</a></dt>
+<code class="descname">content_length</code><a class="headerlink" href="#aiohttp.web.StreamResponse.content_length" title="Permalink to this definition"></a></dt>
 <dd><p><em>Content-Length</em> for outgoing response.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.content_type">
-<code class="descname">content_type</code><a class="headerlink" href="#aiohttp.web.StreamResponse.content_type" title="Permalink to this definition">¶</a></dt>
+<code class="descname">content_type</code><a class="headerlink" href="#aiohttp.web.StreamResponse.content_type" title="Permalink to this definition"></a></dt>
 <dd><p><em>Content</em> part of <em>Content-Type</em> for outgoing response.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.charset">
-<code class="descname">charset</code><a class="headerlink" href="#aiohttp.web.StreamResponse.charset" title="Permalink to this definition">¶</a></dt>
+<code class="descname">charset</code><a class="headerlink" href="#aiohttp.web.StreamResponse.charset" title="Permalink to this definition"></a></dt>
 <dd><p><em>Charset</em> aka <em>encoding</em> part of <em>Content-Type</em> for outgoing response.</p>
 <p>The value converted to lower-case on attribute assigning.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.last_modified">
-<code class="descname">last_modified</code><a class="headerlink" href="#aiohttp.web.StreamResponse.last_modified" title="Permalink to this definition">¶</a></dt>
+<code class="descname">last_modified</code><a class="headerlink" href="#aiohttp.web.StreamResponse.last_modified" title="Permalink to this definition"></a></dt>
 <dd><p><em>Last-Modified</em> header for outgoing response.</p>
 <p>This property accepts raw <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> values,
 <a class="reference external" href="http://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">datetime.datetime</span></code></a> objects, Unix timestamps specified
@@ -698,7 +698,7 @@ value <code class="docutils literal"><span class="pre">None</span></code> to uns
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.tcp_cork">
-<code class="descname">tcp_cork</code><a class="headerlink" href="#aiohttp.web.StreamResponse.tcp_cork" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tcp_cork</code><a class="headerlink" href="#aiohttp.web.StreamResponse.tcp_cork" title="Permalink to this definition"></a></dt>
 <dd><p><code class="xref py py-const docutils literal"><span class="pre">TCP_CORK</span></code> (linux) or <code class="xref py py-const docutils literal"><span class="pre">TCP_NOPUSH</span></code>
 (FreeBSD and MacOSX) is applied to underlying transport if the
 property is <code class="docutils literal"><span class="pre">True</span></code>.</p>
@@ -708,14 +708,14 @@ property is <code class="docutils literal"><span class="pre">True</span></code>.
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.set_tcp_cork">
-<code class="descname">set_tcp_cork</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.set_tcp_cork"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.set_tcp_cork" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_tcp_cork</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.set_tcp_cork"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.set_tcp_cork" title="Permalink to this definition"></a></dt>
 <dd><p>Set <a class="reference internal" href="#aiohttp.web.StreamResponse.tcp_cork" title="aiohttp.web.StreamResponse.tcp_cork"><code class="xref py py-attr docutils literal"><span class="pre">tcp_cork</span></code></a> property to <em>value</em>.</p>
 <p>Clear <a class="reference internal" href="#aiohttp.web.StreamResponse.tcp_nodelay" title="aiohttp.web.StreamResponse.tcp_nodelay"><code class="xref py py-attr docutils literal"><span class="pre">tcp_nodelay</span></code></a> if <em>value</em> is <code class="docutils literal"><span class="pre">True</span></code>.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.StreamResponse.tcp_nodelay">
-<code class="descname">tcp_nodelay</code><a class="headerlink" href="#aiohttp.web.StreamResponse.tcp_nodelay" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tcp_nodelay</code><a class="headerlink" href="#aiohttp.web.StreamResponse.tcp_nodelay" title="Permalink to this definition"></a></dt>
 <dd><p><code class="xref py py-const docutils literal"><span class="pre">TCP_NODELAY</span></code> is applied to underlying transport
 if the property is <code class="docutils literal"><span class="pre">True</span></code>.</p>
 <p>Use <a class="reference internal" href="#aiohttp.web.StreamResponse.set_tcp_nodelay" title="aiohttp.web.StreamResponse.set_tcp_nodelay"><code class="xref py py-meth docutils literal"><span class="pre">set_tcp_nodelay()</span></code></a> to assign new value to the property.</p>
@@ -724,14 +724,14 @@ if the property is <code class="docutils literal"><span class="pre">True</span><
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.set_tcp_nodelay">
-<code class="descname">set_tcp_nodelay</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.set_tcp_nodelay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.set_tcp_nodelay" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_tcp_nodelay</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.set_tcp_nodelay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.set_tcp_nodelay" title="Permalink to this definition"></a></dt>
 <dd><p>Set <a class="reference internal" href="#aiohttp.web.StreamResponse.tcp_nodelay" title="aiohttp.web.StreamResponse.tcp_nodelay"><code class="xref py py-attr docutils literal"><span class="pre">tcp_nodelay</span></code></a> property to <em>value</em>.</p>
 <p>Clear <a class="reference internal" href="#aiohttp.web.StreamResponse.tcp_cork" title="aiohttp.web.StreamResponse.tcp_cork"><code class="xref py py-attr docutils literal"><span class="pre">tcp_cork</span></code></a> if <em>value</em> is <code class="docutils literal"><span class="pre">True</span></code>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.start">
-<code class="descname">start</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.start" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -756,7 +756,7 @@ calling this method.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.prepare">
-<em class="property">coroutine </em><code class="descname">prepare</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.prepare" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">prepare</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.prepare" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -777,7 +777,7 @@ signal handlers.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.write">
-<code class="descname">write</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.write" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.write" title="Permalink to this definition"></a></dt>
 <dd><p>Send byte-ish data as the part of <em>response BODY</em>.</p>
 <p><a class="reference internal" href="#aiohttp.web.StreamResponse.prepare" title="aiohttp.web.StreamResponse.prepare"><code class="xref py py-meth docutils literal"><span class="pre">prepare()</span></code></a> must be called before.</p>
 <p>Raises <a class="reference external" href="http://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.5)"><code class="xref py py-exc docutils literal"><span class="pre">TypeError</span></code></a> if data is not <a class="reference external" href="http://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a>,
@@ -788,7 +788,7 @@ signal handlers.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.drain">
-<em class="property">coroutine </em><code class="descname">drain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.drain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.drain" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">drain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.drain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.drain" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> to let the write buffer of the
 underlying transport a chance to be flushed.</p>
 <p>The intended use is to write:</p>
@@ -805,7 +805,7 @@ between calls to <a class="reference internal" href="#aiohttp.web.StreamResponse
 
 <dl class="method">
 <dt id="aiohttp.web.StreamResponse.write_eof">
-<em class="property">coroutine </em><code class="descname">write_eof</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.write_eof"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.write_eof" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">write_eof</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#StreamResponse.write_eof"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StreamResponse.write_eof" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> <em>may</em> be called as a mark of the
 <em>HTTP response</em> processing finish.</p>
 <p><em>Internal machinery</em> will call this method at the end of
@@ -818,10 +818,10 @@ object are forbidden.</p>
 
 </div>
 <div class="section" id="response">
-<h3>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h3>
+<h3>Response<a class="headerlink" href="#response" title="Permalink to this headline"></a></h3>
 <dl class="class">
 <dt id="aiohttp.web.Response">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">Response</code><span class="sig-paren">(</span><em>*</em>, <em>status=200</em>, <em>headers=None</em>, <em>content_type=None</em>, <em>charset=None</em>, <em>body=None</em>, <em>text=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Response" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">Response</code><span class="sig-paren">(</span><em>*</em>, <em>status=200</em>, <em>headers=None</em>, <em>content_type=None</em>, <em>charset=None</em>, <em>body=None</em>, <em>text=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#Response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Response" title="Permalink to this definition"></a></dt>
 <dd><p>The most usable response class, inherited from <a class="reference internal" href="#aiohttp.web.StreamResponse" title="aiohttp.web.StreamResponse"><code class="xref py py-class docutils literal"><span class="pre">StreamResponse</span></code></a>.</p>
 <p>Accepts <em>body</em> argument for setting the <em>HTTP response BODY</em>.</p>
 <p>The actual <a class="reference internal" href="#aiohttp.web.Response.body" title="aiohttp.web.Response.body"><code class="xref py py-attr docutils literal"><span class="pre">body</span></code></a> sending happens in overridden
@@ -848,7 +848,7 @@ passed also, <code class="docutils literal"><span class="pre">None</span></code>
 </table>
 <dl class="attribute">
 <dt id="aiohttp.web.Response.body">
-<code class="descname">body</code><a class="headerlink" href="#aiohttp.web.Response.body" title="Permalink to this definition">¶</a></dt>
+<code class="descname">body</code><a class="headerlink" href="#aiohttp.web.Response.body" title="Permalink to this definition"></a></dt>
 <dd><p>Read-write attribute for storing response&#8217;s content aka BODY,
 <a class="reference external" href="http://docs.python.org/3/library/functions.html#bytes" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bytes</span></code></a>.</p>
 <p>Setting <a class="reference internal" href="#aiohttp.web.Response.body" title="aiohttp.web.Response.body"><code class="xref py py-attr docutils literal"><span class="pre">body</span></code></a> also recalculates
@@ -860,7 +860,7 @@ passed also, <code class="docutils literal"><span class="pre">None</span></code>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Response.text">
-<code class="descname">text</code><a class="headerlink" href="#aiohttp.web.Response.text" title="Permalink to this definition">¶</a></dt>
+<code class="descname">text</code><a class="headerlink" href="#aiohttp.web.Response.text" title="Permalink to this definition"></a></dt>
 <dd><p>Read-write attribute for storing response&#8217;s content, represented as
 string, <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a>.</p>
 <p>Setting <a class="reference internal" href="#aiohttp.web.Response.text" title="aiohttp.web.Response.text"><code class="xref py py-attr docutils literal"><span class="pre">text</span></code></a> also recalculates
@@ -875,10 +875,10 @@ string, <a class="reference external" href="http://docs.python.org/3/library/std
 
 </div>
 <div class="section" id="websocketresponse">
-<h3>WebSocketResponse<a class="headerlink" href="#websocketresponse" title="Permalink to this headline">¶</a></h3>
+<h3>WebSocketResponse<a class="headerlink" href="#websocketresponse" title="Permalink to this headline"></a></h3>
 <dl class="class">
 <dt id="aiohttp.web.WebSocketResponse">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">WebSocketResponse</code><span class="sig-paren">(</span><em>*</em>, <em>timeout=10.0</em>, <em>autoclose=True</em>, <em>autoping=True</em>, <em>protocols=()</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">WebSocketResponse</code><span class="sig-paren">(</span><em>*</em>, <em>timeout=10.0</em>, <em>autoclose=True</em>, <em>autoping=True</em>, <em>protocols=()</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse" title="Permalink to this definition"></a></dt>
 <dd><p>Class for handling server-side websockets, inherited from
 <a class="reference internal" href="#aiohttp.web.StreamResponse" title="aiohttp.web.StreamResponse"><code class="xref py py-class docutils literal"><span class="pre">StreamResponse</span></code></a>.</p>
 <p>After starting (by <a class="reference internal" href="#aiohttp.web.WebSocketResponse.prepare" title="aiohttp.web.WebSocketResponse.prepare"><code class="xref py py-meth docutils literal"><span class="pre">prepare()</span></code></a> call) the response you
@@ -898,7 +898,7 @@ incoming messages:</p>
 </div>
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.prepare">
-<em class="property">coroutine </em><code class="descname">prepare</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.prepare" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">prepare</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.prepare" title="Permalink to this definition"></a></dt>
 <dd><p>Starts websocket. After the call you can use websocket methods.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -918,7 +918,7 @@ response answers.</td>
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.start">
-<code class="descname">start</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.start" title="Permalink to this definition"></a></dt>
 <dd><p>Starts websocket. After the call you can use websocket methods.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -938,7 +938,7 @@ response answers.</td>
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.can_prepare">
-<code class="descname">can_prepare</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.can_prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.can_prepare" title="Permalink to this definition">¶</a></dt>
+<code class="descname">can_prepare</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.can_prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.can_prepare" title="Permalink to this definition"></a></dt>
 <dd><p>Performs checks for <em>request</em> data to figure out if websocket
 can be started on the request.</p>
 <p>If <a class="reference internal" href="#aiohttp.web.WebSocketResponse.can_prepare" title="aiohttp.web.WebSocketResponse.can_prepare"><code class="xref py py-meth docutils literal"><span class="pre">can_prepare()</span></code></a> call is success then <a class="reference internal" href="#aiohttp.web.WebSocketResponse.prepare" title="aiohttp.web.WebSocketResponse.prepare"><code class="xref py py-meth docutils literal"><span class="pre">prepare()</span></code></a> will
@@ -969,7 +969,7 @@ client and server subprotocols are not overlapping.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.can_start">
-<code class="descname">can_start</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.can_start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.can_start" title="Permalink to this definition">¶</a></dt>
+<code class="descname">can_start</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.can_start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.can_start" title="Permalink to this definition"></a></dt>
 <dd><p>Deprecated alias for <a class="reference internal" href="#aiohttp.web.WebSocketResponse.can_prepare" title="aiohttp.web.WebSocketResponse.can_prepare"><code class="xref py py-meth docutils literal"><span class="pre">can_prepare()</span></code></a></p>
 <div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.18.</span></p>
@@ -978,7 +978,7 @@ client and server subprotocols are not overlapping.</p>
 
 <dl class="attribute">
 <dt id="aiohttp.web.WebSocketResponse.closed">
-<code class="descname">closed</code><a class="headerlink" href="#aiohttp.web.WebSocketResponse.closed" title="Permalink to this definition">¶</a></dt>
+<code class="descname">closed</code><a class="headerlink" href="#aiohttp.web.WebSocketResponse.closed" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only property, <code class="docutils literal"><span class="pre">True</span></code> if connection has been closed or in process
 of closing.
 <a class="reference internal" href="api.html#aiohttp.WSMsgType.CLOSE" title="aiohttp.WSMsgType.CLOSE"><code class="xref py py-const docutils literal"><span class="pre">CLOSE</span></code></a> message has been received from peer.</p>
@@ -986,14 +986,14 @@ of closing.
 
 <dl class="attribute">
 <dt id="aiohttp.web.WebSocketResponse.close_code">
-<code class="descname">close_code</code><a class="headerlink" href="#aiohttp.web.WebSocketResponse.close_code" title="Permalink to this definition">¶</a></dt>
+<code class="descname">close_code</code><a class="headerlink" href="#aiohttp.web.WebSocketResponse.close_code" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only property, close code from peer. It is set to <code class="docutils literal"><span class="pre">None</span></code> on
 opened connection.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.WebSocketResponse.protocol">
-<code class="descname">protocol</code><a class="headerlink" href="#aiohttp.web.WebSocketResponse.protocol" title="Permalink to this definition">¶</a></dt>
+<code class="descname">protocol</code><a class="headerlink" href="#aiohttp.web.WebSocketResponse.protocol" title="Permalink to this definition"></a></dt>
 <dd><p>Websocket <em>subprotocol</em> chosen after <a class="reference internal" href="#aiohttp.web.WebSocketResponse.start" title="aiohttp.web.WebSocketResponse.start"><code class="xref py py-meth docutils literal"><span class="pre">start()</span></code></a> call.</p>
 <p>May be <code class="docutils literal"><span class="pre">None</span></code> if server and client protocols are
 not overlapping.</p>
@@ -1001,13 +1001,13 @@ not overlapping.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.exception">
-<code class="descname">exception</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.exception"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.exception" title="Permalink to this definition">¶</a></dt>
+<code class="descname">exception</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.exception"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.exception" title="Permalink to this definition"></a></dt>
 <dd><p>Returns last occurred exception or None.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.ping">
-<code class="descname">ping</code><span class="sig-paren">(</span><em>message=b''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.ping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.ping" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ping</code><span class="sig-paren">(</span><em>message=b''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.ping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.ping" title="Permalink to this definition"></a></dt>
 <dd><p>Send <a class="reference internal" href="api.html#aiohttp.WSMsgType.PING" title="aiohttp.WSMsgType.PING"><code class="xref py py-const docutils literal"><span class="pre">PING</span></code></a> to peer.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1025,7 +1025,7 @@ or <a class="reference external" href="http://docs.python.org/3/library/function
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.pong">
-<code class="descname">pong</code><span class="sig-paren">(</span><em>message=b''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.pong"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.pong" title="Permalink to this definition">¶</a></dt>
+<code class="descname">pong</code><span class="sig-paren">(</span><em>message=b''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.pong"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.pong" title="Permalink to this definition"></a></dt>
 <dd><p>Send <em>unsolicited</em> <a class="reference internal" href="api.html#aiohttp.WSMsgType.PONG" title="aiohttp.WSMsgType.PONG"><code class="xref py py-const docutils literal"><span class="pre">PONG</span></code></a> to peer.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1043,7 +1043,7 @@ or <a class="reference external" href="http://docs.python.org/3/library/function
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.send_str">
-<code class="descname">send_str</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.send_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.send_str" title="Permalink to this definition">¶</a></dt>
+<code class="descname">send_str</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.send_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.send_str" title="Permalink to this definition"></a></dt>
 <dd><p>Send <em>data</em> to peer as <a class="reference internal" href="api.html#aiohttp.WSMsgType.TEXT" title="aiohttp.WSMsgType.TEXT"><code class="xref py py-const docutils literal"><span class="pre">TEXT</span></code></a> message.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1064,7 +1064,7 @@ or <a class="reference external" href="http://docs.python.org/3/library/function
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.send_bytes">
-<code class="descname">send_bytes</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.send_bytes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.send_bytes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">send_bytes</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.send_bytes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.send_bytes" title="Permalink to this definition"></a></dt>
 <dd><p>Send <em>data</em> to peer as <a class="reference internal" href="api.html#aiohttp.WSMsgType.BINARY" title="aiohttp.WSMsgType.BINARY"><code class="xref py py-const docutils literal"><span class="pre">BINARY</span></code></a> message.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1086,7 +1086,7 @@ or <a class="reference external" href="http://docs.python.org/3/library/function
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.send_json">
-<code class="descname">send_json</code><span class="sig-paren">(</span><em>data</em>, <em>*</em>, <em>dumps=json.loads</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.send_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.send_json" title="Permalink to this definition">¶</a></dt>
+<code class="descname">send_json</code><span class="sig-paren">(</span><em>data</em>, <em>*</em>, <em>dumps=json.loads</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.send_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.send_json" title="Permalink to this definition"></a></dt>
 <dd><p>Send <em>data</em> to peer as JSON string.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1113,7 +1113,7 @@ returns a JSON string
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.close">
-<em class="property">coroutine </em><code class="descname">close</code><span class="sig-paren">(</span><em>*</em>, <em>code=1000</em>, <em>message=b''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.close" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">close</code><span class="sig-paren">(</span><em>*</em>, <em>code=1000</em>, <em>message=b''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.close" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> that initiates closing
 handshake by sending <a class="reference internal" href="api.html#aiohttp.WSMsgType.CLOSE" title="aiohttp.WSMsgType.CLOSE"><code class="xref py py-const docutils literal"><span class="pre">CLOSE</span></code></a> message.</p>
 <div class="admonition note">
@@ -1143,7 +1143,7 @@ or <a class="reference external" href="http://docs.python.org/3/library/function
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.receive">
-<em class="property">coroutine </em><code class="descname">receive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.receive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.receive" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">receive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.receive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.receive" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> that waits upcoming <em>data</em>
 message from peer and returns it.</p>
 <p>The coroutine implicitly handles
@@ -1175,7 +1175,7 @@ connection closing data.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.receive_str">
-<em class="property">coroutine </em><code class="descname">receive_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.receive_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.receive_str" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">receive_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.receive_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.receive_str" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> that calls <a class="reference internal" href="#aiohttp.web.WebSocketResponse.receive" title="aiohttp.web.WebSocketResponse.receive"><code class="xref py py-meth docutils literal"><span class="pre">receive()</span></code></a> but
 also asserts the message type is
 <a class="reference internal" href="api.html#aiohttp.WSMsgType.TEXT" title="aiohttp.WSMsgType.TEXT"><code class="xref py py-const docutils literal"><span class="pre">TEXT</span></code></a>.</p>
@@ -1197,7 +1197,7 @@ also asserts the message type is
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.receive_bytes">
-<em class="property">coroutine </em><code class="descname">receive_bytes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.receive_bytes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.receive_bytes" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">receive_bytes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.receive_bytes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.receive_bytes" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> that calls <a class="reference internal" href="#aiohttp.web.WebSocketResponse.receive" title="aiohttp.web.WebSocketResponse.receive"><code class="xref py py-meth docutils literal"><span class="pre">receive()</span></code></a> but
 also asserts the message type is
 <a class="reference internal" href="api.html#aiohttp.WSMsgType.BINARY" title="aiohttp.WSMsgType.BINARY"><code class="xref py py-const docutils literal"><span class="pre">BINARY</span></code></a>.</p>
@@ -1219,7 +1219,7 @@ also asserts the message type is
 
 <dl class="method">
 <dt id="aiohttp.web.WebSocketResponse.receive_json">
-<em class="property">coroutine </em><code class="descname">receive_json</code><span class="sig-paren">(</span><em>*</em>, <em>loads=json.loads</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.receive_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.receive_json" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">receive_json</code><span class="sig-paren">(</span><em>*</em>, <em>loads=json.loads</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketResponse.receive_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketResponse.receive_json" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> that calls <a class="reference internal" href="#aiohttp.web.WebSocketResponse.receive_str" title="aiohttp.web.WebSocketResponse.receive_str"><code class="xref py py-meth docutils literal"><span class="pre">receive_str()</span></code></a> and loads the
 JSON string to a Python dict.</p>
 <div class="admonition note">
@@ -1260,10 +1260,10 @@ default).</p>
 </div>
 </div>
 <div class="section" id="websocketready">
-<h3>WebSocketReady<a class="headerlink" href="#websocketready" title="Permalink to this headline">¶</a></h3>
+<h3>WebSocketReady<a class="headerlink" href="#websocketready" title="Permalink to this headline"></a></h3>
 <dl class="class">
 <dt id="aiohttp.web.WebSocketReady">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">WebSocketReady</code><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketReady"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketReady" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">WebSocketReady</code><a class="reference internal" href="_modules/aiohttp/web_ws.html#WebSocketReady"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.WebSocketReady" title="Permalink to this definition"></a></dt>
 <dd><p>A named tuple for returning result from
 <a class="reference internal" href="#aiohttp.web.WebSocketResponse.can_prepare" title="aiohttp.web.WebSocketResponse.can_prepare"><code class="xref py py-meth docutils literal"><span class="pre">WebSocketResponse.can_prepare()</span></code></a>.</p>
 <p>Has <a class="reference external" href="http://docs.python.org/3/library/functions.html#bool" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">bool</span></code></a> check implemented, e.g.:</p>
@@ -1273,14 +1273,14 @@ default).</p>
 </div>
 <dl class="attribute">
 <dt id="aiohttp.web.WebSocketReady.ok">
-<code class="descname">ok</code><a class="headerlink" href="#aiohttp.web.WebSocketReady.ok" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ok</code><a class="headerlink" href="#aiohttp.web.WebSocketReady.ok" title="Permalink to this definition"></a></dt>
 <dd><p><code class="docutils literal"><span class="pre">True</span></code> if websocket connection can be established, <code class="docutils literal"><span class="pre">False</span></code>
 otherwise.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.WebSocketReady.protocol">
-<code class="descname">protocol</code><a class="headerlink" href="#aiohttp.web.WebSocketReady.protocol" title="Permalink to this definition">¶</a></dt>
+<code class="descname">protocol</code><a class="headerlink" href="#aiohttp.web.WebSocketReady.protocol" title="Permalink to this definition"></a></dt>
 <dd><p><a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a> represented selected websocket sub-protocol.</p>
 </dd></dl>
 
@@ -1293,10 +1293,10 @@ otherwise.</p>
 </div>
 </div>
 <div class="section" id="json-response">
-<h2>json_response<a class="headerlink" href="#json-response" title="Permalink to this headline">¶</a></h2>
+<h2>json_response<a class="headerlink" href="#json-response" title="Permalink to this headline"></a></h2>
 <dl class="function">
 <dt id="aiohttp.web.json_response">
-<code class="descclassname">aiohttp.web.</code><code class="descname">json_response</code><span class="sig-paren">(</span><span class="optional">[</span><em>data</em>, <span class="optional">]</span><em>*</em>, <em>text=None</em>, <em>body=None</em>, <em>status=200</em>, <em>reason=None</em>, <em>headers=None</em>, <em>content_type='application/json'</em>, <em>dumps=json.dumps</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#json_response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.json_response" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">aiohttp.web.</code><code class="descname">json_response</code><span class="sig-paren">(</span><span class="optional">[</span><em>data</em>, <span class="optional">]</span><em>*</em>, <em>text=None</em>, <em>body=None</em>, <em>status=200</em>, <em>reason=None</em>, <em>headers=None</em>, <em>content_type='application/json'</em>, <em>dumps=json.dumps</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#json_response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.json_response" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <p>Return <a class="reference internal" href="#aiohttp.web.Response" title="aiohttp.web.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> with predefined <code class="docutils literal"><span class="pre">'application/json'</span></code>
@@ -1304,9 +1304,9 @@ content type and <em>data</em> encoded by <code class="docutils literal"><span c
 (<a class="reference external" href="http://docs.python.org/3/library/json.html#json.dumps" title="(in Python v3.5)"><code class="xref py py-func docutils literal"><span class="pre">json.dumps()</span></code></a> by default).</p>
 </div>
 <div class="section" id="application-and-router">
-<span id="aiohttp-web-app-and-router"></span><h2>Application and Router<a class="headerlink" href="#application-and-router" title="Permalink to this headline">¶</a></h2>
+<span id="aiohttp-web-app-and-router"></span><h2>Application and Router<a class="headerlink" href="#application-and-router" title="Permalink to this headline"></a></h2>
 <div class="section" id="application">
-<h3>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h3>
+<h3>Application<a class="headerlink" href="#application" title="Permalink to this headline"></a></h3>
 <p>Application is a synonym for web-server.</p>
 <p>To get fully working example, you have to make <em>application</em>, register
 supported urls in <em>router</em> and create a <em>server socket</em> with
@@ -1331,7 +1331,7 @@ properties for later access from a <a class="reference internal" href="web.html#
 duplicated like one using <code class="xref py py-meth docutils literal"><span class="pre">Application.copy()</span></code>.</p>
 <dl class="class">
 <dt id="aiohttp.web.Application">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">Application</code><span class="sig-paren">(</span><em>*</em>, <em>loop=None</em>, <em>router=None</em>, <em>logger=&lt;default&gt;</em>, <em>middlewares=()</em>, <em>debug=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#Application"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Application" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">Application</code><span class="sig-paren">(</span><em>*</em>, <em>loop=None</em>, <em>router=None</em>, <em>logger=&lt;default&gt;</em>, <em>middlewares=()</em>, <em>debug=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#Application"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Application" title="Permalink to this definition"></a></dt>
 <dd><p>The class inherits <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">dict</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1360,31 +1360,31 @@ creates <a class="reference internal" href="#aiohttp.web.UrlDispatcher" title="a
 </table>
 <dl class="attribute">
 <dt id="aiohttp.web.Application.router">
-<code class="descname">router</code><a class="headerlink" href="#aiohttp.web.Application.router" title="Permalink to this definition">¶</a></dt>
+<code class="descname">router</code><a class="headerlink" href="#aiohttp.web.Application.router" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only property that returns <em>router instance</em>.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Application.logger">
-<code class="descname">logger</code><a class="headerlink" href="#aiohttp.web.Application.logger" title="Permalink to this definition">¶</a></dt>
+<code class="descname">logger</code><a class="headerlink" href="#aiohttp.web.Application.logger" title="Permalink to this definition"></a></dt>
 <dd><p><a class="reference external" href="http://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">logging.Logger</span></code></a> instance for storing application logs.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Application.loop">
-<code class="descname">loop</code><a class="headerlink" href="#aiohttp.web.Application.loop" title="Permalink to this definition">¶</a></dt>
+<code class="descname">loop</code><a class="headerlink" href="#aiohttp.web.Application.loop" title="Permalink to this definition"></a></dt>
 <dd><p><a class="reference external" href="http://docs.python.org/3/library/asyncio-eventloop.html#asyncio-event-loop" title="(in Python v3.5)"><span class="xref std std-ref">event loop</span></a> used for processing HTTP requests.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Application.debug">
-<code class="descname">debug</code><a class="headerlink" href="#aiohttp.web.Application.debug" title="Permalink to this definition">¶</a></dt>
+<code class="descname">debug</code><a class="headerlink" href="#aiohttp.web.Application.debug" title="Permalink to this definition"></a></dt>
 <dd><p>Boolean value indicating whether the debug mode is turned on or off.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Application.on_response_prepare">
-<code class="descname">on_response_prepare</code><a class="headerlink" href="#aiohttp.web.Application.on_response_prepare" title="Permalink to this definition">¶</a></dt>
+<code class="descname">on_response_prepare</code><a class="headerlink" href="#aiohttp.web.Application.on_response_prepare" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference internal" href="api.html#aiohttp.signals.Signal" title="aiohttp.signals.Signal"><code class="xref py py-class docutils literal"><span class="pre">Signal</span></code></a> that is fired at the beginning
 of <a class="reference internal" href="#aiohttp.web.StreamResponse.prepare" title="aiohttp.web.StreamResponse.prepare"><code class="xref py py-meth docutils literal"><span class="pre">StreamResponse.prepare()</span></code></a> with parameters <em>request</em> and
 <em>response</em>. It can be used, for example, to add custom headers to each
@@ -1398,7 +1398,7 @@ response before sending.</p>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Application.on_startup">
-<code class="descname">on_startup</code><a class="headerlink" href="#aiohttp.web.Application.on_startup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">on_startup</code><a class="headerlink" href="#aiohttp.web.Application.on_startup" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference internal" href="api.html#aiohttp.signals.Signal" title="aiohttp.signals.Signal"><code class="xref py py-class docutils literal"><span class="pre">Signal</span></code></a> that is fired on application start-up.</p>
 <p>Subscribers may use the signal to run background tasks in the event
 loop along with the application&#8217;s request handler just after the
@@ -1416,7 +1416,7 @@ application start-up.</p>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Application.on_shutdown">
-<code class="descname">on_shutdown</code><a class="headerlink" href="#aiohttp.web.Application.on_shutdown" title="Permalink to this definition">¶</a></dt>
+<code class="descname">on_shutdown</code><a class="headerlink" href="#aiohttp.web.Application.on_shutdown" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference internal" href="api.html#aiohttp.signals.Signal" title="aiohttp.signals.Signal"><code class="xref py py-class docutils literal"><span class="pre">Signal</span></code></a> that is fired on application shutdown.</p>
 <p>Subscribers may use the signal for gracefully closing long running
 connections, e.g. websockets and data streaming.</p>
@@ -1437,7 +1437,7 @@ are still alive and how to finish them properly.</p>
 
 <dl class="attribute">
 <dt id="aiohttp.web.Application.on_cleanup">
-<code class="descname">on_cleanup</code><a class="headerlink" href="#aiohttp.web.Application.on_cleanup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">on_cleanup</code><a class="headerlink" href="#aiohttp.web.Application.on_cleanup" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference internal" href="api.html#aiohttp.signals.Signal" title="aiohttp.signals.Signal"><code class="xref py py-class docutils literal"><span class="pre">Signal</span></code></a> that is fired on application cleanup.</p>
 <p>Subscribers may use the signal for gracefully closing
 connections to database server etc.</p>
@@ -1454,7 +1454,7 @@ connections to database server etc.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.Application.make_handler">
-<code class="descname">make_handler</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#Application.make_handler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Application.make_handler" title="Permalink to this definition">¶</a></dt>
+<code class="descname">make_handler</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#Application.make_handler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Application.make_handler" title="Permalink to this definition"></a></dt>
 <dd><p>Creates HTTP protocol factory for handling requests.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1511,7 +1511,7 @@ as a single point to setup a debug mode.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.Application.startup">
-<em class="property">coroutine </em><code class="descname">startup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#Application.startup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Application.startup" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">startup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#Application.startup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Application.startup" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> that will be called along with the
 application&#8217;s request handler.</p>
 <p>The purpose of the method is calling <a class="reference internal" href="#aiohttp.web.Application.on_startup" title="aiohttp.web.Application.on_startup"><code class="xref py py-attr docutils literal"><span class="pre">on_startup</span></code></a> signal
@@ -1520,7 +1520,7 @@ handlers.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.Application.shutdown">
-<em class="property">coroutine </em><code class="descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#Application.shutdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Application.shutdown" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#Application.shutdown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Application.shutdown" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> that should be called on
 server stopping but before <a class="reference internal" href="#aiohttp.web.Application.finish" title="aiohttp.web.Application.finish"><code class="xref py py-meth docutils literal"><span class="pre">finish()</span></code></a>.</p>
 <p>The purpose of the method is calling <a class="reference internal" href="#aiohttp.web.Application.on_shutdown" title="aiohttp.web.Application.on_shutdown"><code class="xref py py-attr docutils literal"><span class="pre">on_shutdown</span></code></a> signal
@@ -1529,7 +1529,7 @@ handlers.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.Application.cleanup">
-<em class="property">coroutine </em><code class="descname">cleanup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#Application.cleanup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Application.cleanup" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">cleanup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#Application.cleanup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Application.cleanup" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> that should be called on
 server stopping but after <a class="reference internal" href="#aiohttp.web.Application.shutdown" title="aiohttp.web.Application.shutdown"><code class="xref py py-meth docutils literal"><span class="pre">shutdown()</span></code></a>.</p>
 <p>The purpose of the method is calling <a class="reference internal" href="#aiohttp.web.Application.on_cleanup" title="aiohttp.web.Application.on_cleanup"><code class="xref py py-attr docutils literal"><span class="pre">on_cleanup</span></code></a> signal
@@ -1538,7 +1538,7 @@ handlers.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.Application.finish">
-<em class="property">coroutine </em><code class="descname">finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#Application.finish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Application.finish" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#Application.finish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Application.finish" title="Permalink to this definition"></a></dt>
 <dd><p>A deprecated alias for <a class="reference internal" href="#aiohttp.web.Application.cleanup" title="aiohttp.web.Application.cleanup"><code class="xref py py-meth docutils literal"><span class="pre">cleanup()</span></code></a>.</p>
 <div class="deprecated">
 <p><span class="versionmodified">Deprecated since version 0.21.</span></p>
@@ -1579,24 +1579,24 @@ router for your application).</p>
 
 </div>
 <div class="section" id="requesthandlerfactory">
-<h3>RequestHandlerFactory<a class="headerlink" href="#requesthandlerfactory" title="Permalink to this headline">¶</a></h3>
+<h3>RequestHandlerFactory<a class="headerlink" href="#requesthandlerfactory" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><p>A protocol factory compatible with
 <code class="xref py py-meth docutils literal"><span class="pre">create_server()</span></code>.</p>
 <dl class="class">
 <dt id="aiohttp.web.RequestHandlerFactory">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">RequestHandlerFactory</code><a class="reference internal" href="_modules/aiohttp/web.html#RequestHandlerFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.RequestHandlerFactory" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">RequestHandlerFactory</code><a class="reference internal" href="_modules/aiohttp/web.html#RequestHandlerFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.RequestHandlerFactory" title="Permalink to this definition"></a></dt>
 <dd><p>RequestHandlerFactory is responsible for creating HTTP protocol
 objects that can handle HTTP connections.</p>
 <dl class="attribute">
 <dt id="aiohttp.web.RequestHandlerFactory.connections">
-<code class="descname">connections</code><a class="headerlink" href="#aiohttp.web.RequestHandlerFactory.connections" title="Permalink to this definition">¶</a></dt>
+<code class="descname">connections</code><a class="headerlink" href="#aiohttp.web.RequestHandlerFactory.connections" title="Permalink to this definition"></a></dt>
 <dd><p>List of all currently opened connections.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.RequestHandlerFactory.requests_count">
-<code class="descname">requests_count</code><a class="headerlink" href="#aiohttp.web.RequestHandlerFactory.requests_count" title="Permalink to this definition">¶</a></dt>
+<code class="descname">requests_count</code><a class="headerlink" href="#aiohttp.web.RequestHandlerFactory.requests_count" title="Permalink to this definition"></a></dt>
 <dd><p>Amount of processed requests.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.0.</span></p>
@@ -1605,7 +1605,7 @@ objects that can handle HTTP connections.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.RequestHandlerFactory.finish_connections">
-<em class="property">coroutine </em><code class="descname">finish_connections</code><span class="sig-paren">(</span><em>timeout</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#RequestHandlerFactory.finish_connections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.RequestHandlerFactory.finish_connections" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">finish_connections</code><span class="sig-paren">(</span><em>timeout</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#RequestHandlerFactory.finish_connections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.RequestHandlerFactory.finish_connections" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> that should be called to close all opened
 connections.</p>
 </dd></dl>
@@ -1615,7 +1615,7 @@ connections.</p>
 </div></blockquote>
 </div>
 <div class="section" id="router">
-<h3>Router<a class="headerlink" href="#router" title="Permalink to this headline">¶</a></h3>
+<h3>Router<a class="headerlink" href="#router" title="Permalink to this headline"></a></h3>
 <p>For dispatching URLs to <a class="reference internal" href="web.html#aiohttp-web-handler"><span>handlers</span></a>
 <a class="reference internal" href="#module-aiohttp.web" title="aiohttp.web"><code class="xref py py-mod docutils literal"><span class="pre">aiohttp.web</span></code></a> uses <em>routers</em>.</p>
 <p>Router is any object that implements <code class="xref py py-class docutils literal"><span class="pre">AbstractRouter</span></code> interface.</p>
@@ -1623,7 +1623,7 @@ connections.</p>
 <p><a class="reference internal" href="#aiohttp.web.Application" title="aiohttp.web.Application"><code class="xref py py-class docutils literal"><span class="pre">Application</span></code></a> uses <a class="reference internal" href="#aiohttp.web.UrlDispatcher" title="aiohttp.web.UrlDispatcher"><code class="xref py py-class docutils literal"><span class="pre">UrlDispatcher</span></code></a> as <code class="xref py py-meth docutils literal"><span class="pre">router()</span></code> by default.</p>
 <dl class="class">
 <dt id="aiohttp.web.UrlDispatcher">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">UrlDispatcher</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">UrlDispatcher</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher" title="Permalink to this definition"></a></dt>
 <dd><p>Straightforward url-matching router, implements
 <a class="reference external" href="http://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">collections.abc.Mapping</span></code></a> for access to <em>named routes</em>.</p>
 <p>Before running <a class="reference internal" href="#aiohttp.web.Application" title="aiohttp.web.Application"><code class="xref py py-class docutils literal"><span class="pre">Application</span></code></a> you should fill <em>route
@@ -1641,7 +1641,7 @@ existence by <code class="docutils literal"><span class="pre">name</span> <span 
 </div>
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.add_resource">
-<code class="descname">add_resource</code><span class="sig-paren">(</span><em>path</em>, <em>*</em>, <em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_resource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_resource" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_resource</code><span class="sig-paren">(</span><em>path</em>, <em>*</em>, <em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_resource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_resource" title="Permalink to this definition"></a></dt>
 <dd><p>Append a <a class="reference internal" href="glossary.html#term-resource"><span class="xref std std-term">resource</span></a> to the end of route table.</p>
 <p><em>path</em> may be either <em>constant</em> string like <code class="docutils literal"><span class="pre">'/a/b/c'</span></code> or
 <em>variable rule</em> like <code class="docutils literal"><span class="pre">'/a/{var}'</span></code> (see
@@ -1666,7 +1666,7 @@ existence by <code class="docutils literal"><span class="pre">name</span> <span 
 
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.add_route">
-<code class="descname">add_route</code><span class="sig-paren">(</span><em>method</em>, <em>path</em>, <em>handler</em>, <em>*</em>, <em>name=None</em>, <em>expect_handler=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_route"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_route" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_route</code><span class="sig-paren">(</span><em>method</em>, <em>path</em>, <em>handler</em>, <em>*</em>, <em>name=None</em>, <em>expect_handler=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_route"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_route" title="Permalink to this definition"></a></dt>
 <dd><p>Append <a class="reference internal" href="web.html#aiohttp-web-handler"><span>handler</span></a> to the end of route table.</p>
 <dl class="docutils">
 <dt><em>path</em> may be either <em>constant</em> string like <code class="docutils literal"><span class="pre">'/a/b/c'</span></code> or</dt>
@@ -1703,7 +1703,7 @@ can push <code class="docutils literal"><span class="pre">'get'</span></code> as
 
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.add_get">
-<code class="descname">add_get</code><span class="sig-paren">(</span><em>path</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_get" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_get</code><span class="sig-paren">(</span><em>path</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_get" title="Permalink to this definition"></a></dt>
 <dd><p>Shortcut for adding a GET handler. Calls the <a class="reference internal" href="#aiohttp.web.UrlDispatcher.add_route" title="aiohttp.web.UrlDispatcher.add_route"><code class="xref py py-meth docutils literal"><span class="pre">add_route()</span></code></a> with <code class="docutils literal"><span class="pre">method</span></code> equals to <code class="docutils literal"><span class="pre">'GET'</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.0.</span></p>
@@ -1712,7 +1712,7 @@ can push <code class="docutils literal"><span class="pre">'get'</span></code> as
 
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.add_post">
-<code class="descname">add_post</code><span class="sig-paren">(</span><em>path</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_post"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_post" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_post</code><span class="sig-paren">(</span><em>path</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_post"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_post" title="Permalink to this definition"></a></dt>
 <dd><p>Shortcut for adding a POST handler. Calls the <a class="reference internal" href="#aiohttp.web.UrlDispatcher.add_route" title="aiohttp.web.UrlDispatcher.add_route"><code class="xref py py-meth docutils literal"><span class="pre">add_route()</span></code></a> with <code class="docutils literal"><span class="pre">method</span></code> equals to <code class="docutils literal"><span class="pre">'POST'</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.0.</span></p>
@@ -1721,7 +1721,7 @@ can push <code class="docutils literal"><span class="pre">'get'</span></code> as
 
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.add_put">
-<code class="descname">add_put</code><span class="sig-paren">(</span><em>path</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_put"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_put" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_put</code><span class="sig-paren">(</span><em>path</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_put"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_put" title="Permalink to this definition"></a></dt>
 <dd><p>Shortcut for adding a PUT handler. Calls the <a class="reference internal" href="#aiohttp.web.UrlDispatcher.add_route" title="aiohttp.web.UrlDispatcher.add_route"><code class="xref py py-meth docutils literal"><span class="pre">add_route()</span></code></a> with <code class="docutils literal"><span class="pre">method</span></code> equals to <code class="docutils literal"><span class="pre">'PUT'</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.0.</span></p>
@@ -1730,7 +1730,7 @@ can push <code class="docutils literal"><span class="pre">'get'</span></code> as
 
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.add_patch">
-<code class="descname">add_patch</code><span class="sig-paren">(</span><em>path</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_patch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_patch" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_patch</code><span class="sig-paren">(</span><em>path</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_patch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_patch" title="Permalink to this definition"></a></dt>
 <dd><p>Shortcut for adding a PATCH handler. Calls the <a class="reference internal" href="#aiohttp.web.UrlDispatcher.add_route" title="aiohttp.web.UrlDispatcher.add_route"><code class="xref py py-meth docutils literal"><span class="pre">add_route()</span></code></a> with <code class="docutils literal"><span class="pre">method</span></code> equals to <code class="docutils literal"><span class="pre">'PATCH'</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.0.</span></p>
@@ -1739,7 +1739,7 @@ can push <code class="docutils literal"><span class="pre">'get'</span></code> as
 
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.add_delete">
-<code class="descname">add_delete</code><span class="sig-paren">(</span><em>path</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_delete" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_delete</code><span class="sig-paren">(</span><em>path</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_delete" title="Permalink to this definition"></a></dt>
 <dd><p>Shortcut for adding a DELETE handler. Calls the <a class="reference internal" href="#aiohttp.web.UrlDispatcher.add_route" title="aiohttp.web.UrlDispatcher.add_route"><code class="xref py py-meth docutils literal"><span class="pre">add_route()</span></code></a> with <code class="docutils literal"><span class="pre">method</span></code> equals to <code class="docutils literal"><span class="pre">'DELETE'</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.0.</span></p>
@@ -1748,7 +1748,7 @@ can push <code class="docutils literal"><span class="pre">'get'</span></code> as
 
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.add_static">
-<code class="descname">add_static</code><span class="sig-paren">(</span><em>prefix</em>, <em>path</em>, <em>*</em>, <em>name=None</em>, <em>expect_handler=None</em>, <em>chunk_size=256*1024</em>, <em>response_factory=StreamResponse                     show_index=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_static"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_static" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_static</code><span class="sig-paren">(</span><em>prefix</em>, <em>path</em>, <em>*</em>, <em>name=None</em>, <em>expect_handler=None</em>, <em>chunk_size=256*1024</em>, <em>response_factory=StreamResponse                     show_index=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.add_static"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.add_static" title="Permalink to this definition"></a></dt>
 <dd><p>Adds a router and a handler for returning static files.</p>
 <p>Useful for serving static content like images, javascript and css files.</p>
 <p>On platforms that support it, the handler will transfer files more
@@ -1817,7 +1817,7 @@ be returned on directory access.</li>
 </table>
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.resolve">
-<em class="property">coroutine </em><code class="descname">resolve</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.resolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.resolve" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">resolve</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.resolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.resolve" title="Permalink to this definition"></a></dt>
 <dd><p>A <a class="reference external" href="http://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.5)"><span class="xref std std-ref">coroutine</span></a> that returns
 <code class="xref py py-class docutils literal"><span class="pre">AbstractMatchInfo</span></code> for <em>request</em>.</p>
 <p>The method never raises exception, but returns
@@ -1843,7 +1843,7 @@ matching against registered routes.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.resources">
-<code class="descname">resources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.resources"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.resources" title="Permalink to this definition">¶</a></dt>
+<code class="descname">resources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.resources"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.resources" title="Permalink to this definition"></a></dt>
 <dd><p>The method returns a <em>view</em> for <em>all</em> registered resources.</p>
 <p>The view is an object that allows to:</p>
 <ol class="arabic">
@@ -1871,7 +1871,7 @@ matching against registered routes.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.routes">
-<code class="descname">routes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.routes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.routes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">routes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.routes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.routes" title="Permalink to this definition"></a></dt>
 <dd><p>The method returns a <em>view</em> for <em>all</em> registered routes.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 0.18.</span></p>
@@ -1880,7 +1880,7 @@ matching against registered routes.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.named_resources">
-<code class="descname">named_resources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.named_resources"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.named_resources" title="Permalink to this definition">¶</a></dt>
+<code class="descname">named_resources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.named_resources"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.named_resources" title="Permalink to this definition"></a></dt>
 <dd><p>Returns a <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">dict</span></code></a>-like <a class="reference external" href="http://docs.python.org/3/library/types.html#types.MappingProxyType" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">types.MappingProxyType</span></code></a> <em>view</em> over
 <em>all</em> named <strong>resources</strong>.</p>
 <p>The view maps every named resource&#8217;s <strong>name</strong> to the
@@ -1904,7 +1904,7 @@ matching against registered routes.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.UrlDispatcher.named_routes">
-<code class="descname">named_routes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.named_routes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.named_routes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">named_routes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlDispatcher.named_routes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlDispatcher.named_routes" title="Permalink to this definition"></a></dt>
 <dd><p>An alias for <a class="reference internal" href="#aiohttp.web.UrlDispatcher.named_resources" title="aiohttp.web.UrlDispatcher.named_resources"><code class="xref py py-meth docutils literal"><span class="pre">named_resources()</span></code></a> starting from aiohttp 0.21.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 0.19.</span></p>
@@ -1924,7 +1924,7 @@ resource name.</p>
 
 </div>
 <div class="section" id="resource">
-<span id="aiohttp-web-resource"></span><h3>Resource<a class="headerlink" href="#resource" title="Permalink to this headline">¶</a></h3>
+<span id="aiohttp-web-resource"></span><h3>Resource<a class="headerlink" href="#resource" title="Permalink to this headline"></a></h3>
 <p>Default router <a class="reference internal" href="#aiohttp.web.UrlDispatcher" title="aiohttp.web.UrlDispatcher"><code class="xref py py-class docutils literal"><span class="pre">UrlDispatcher</span></code></a> operates with <a class="reference internal" href="glossary.html#term-resource"><span class="xref std std-term">resource</span></a>s.</p>
 <p>Resource is an item in <em>routing table</em> which has a <em>path</em>, an optional
 unique <em>name</em> and at least one <a class="reference internal" href="glossary.html#term-route"><span class="xref std std-term">route</span></a>.</p>
@@ -1967,7 +1967,7 @@ passing it into <em>template engine</em> for example:</p>
 </div>
 <dl class="class">
 <dt id="aiohttp.web.AbstractResource">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">AbstractResource</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#AbstractResource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.AbstractResource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">AbstractResource</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#AbstractResource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.AbstractResource" title="Permalink to this definition"></a></dt>
 <dd><p>A base class for all resources.</p>
 <p>Inherited from <a class="reference external" href="http://docs.python.org/3/library/collections.abc.html#collections.abc.Sized" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">collections.abc.Sized</span></code></a> and
 <a class="reference external" href="http://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">collections.abc.Iterable</span></code></a>.</p>
@@ -1975,13 +1975,13 @@ passing it into <em>template engine</em> for example:</p>
 <code class="docutils literal"><span class="pre">for</span> <span class="pre">route</span> <span class="pre">in</span> <span class="pre">resource</span></code> allows to iterate over these routes.</p>
 <dl class="attribute">
 <dt id="aiohttp.web.AbstractResource.name">
-<code class="descname">name</code><a class="headerlink" href="#aiohttp.web.AbstractResource.name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">name</code><a class="headerlink" href="#aiohttp.web.AbstractResource.name" title="Permalink to this definition"></a></dt>
 <dd><p>Read-only <em>name</em> of resource or <code class="docutils literal"><span class="pre">None</span></code>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="aiohttp.web.AbstractResource.resolve">
-<em class="property">coroutine </em><code class="descname">resolve</code><span class="sig-paren">(</span><em>method</em>, <em>path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#AbstractResource.resolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.AbstractResource.resolve" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">resolve</code><span class="sig-paren">(</span><em>method</em>, <em>path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#AbstractResource.resolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.AbstractResource.resolve" title="Permalink to this definition"></a></dt>
 <dd><p>Resolve resource by finding appropriate <a class="reference internal" href="glossary.html#term-web-handler"><span class="xref std std-term">web-handler</span></a> for
 <code class="docutils literal"><span class="pre">(method,</span> <span class="pre">path)</span></code> combination.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -2009,7 +2009,7 @@ found.</p>
 
 <dl class="method">
 <dt id="aiohttp.web.AbstractResource.url">
-<code class="descname">url</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#AbstractResource.url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.AbstractResource.url" title="Permalink to this definition">¶</a></dt>
+<code class="descname">url</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#AbstractResource.url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.AbstractResource.url" title="Permalink to this definition"></a></dt>
 <dd><p>Construct an URL for route with additional params.</p>
 <p><strong>kwargs</strong> depends on a list accepted by inherited resource
 class parameters.</p>
@@ -2027,11 +2027,11 @@ class parameters.</p>
 
 <dl class="class">
 <dt id="aiohttp.web.Resource">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">Resource</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#Resource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Resource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">Resource</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#Resource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Resource" title="Permalink to this definition"></a></dt>
 <dd><p>A base class for new-style resources, inherits <a class="reference internal" href="#aiohttp.web.AbstractResource" title="aiohttp.web.AbstractResource"><code class="xref py py-class docutils literal"><span class="pre">AbstractResource</span></code></a>.</p>
 <dl class="method">
 <dt id="aiohttp.web.Resource.add_route">
-<code class="descname">add_route</code><span class="sig-paren">(</span><em>method</em>, <em>handler</em>, <em>*</em>, <em>expect_handler=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#Resource.add_route"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Resource.add_route" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_route</code><span class="sig-paren">(</span><em>method</em>, <em>handler</em>, <em>*</em>, <em>expect_handler=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#Resource.add_route"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.Resource.add_route" title="Permalink to this definition"></a></dt>
 <dd><p>Add a <a class="reference internal" href="glossary.html#term-web-handler"><span class="xref std std-term">web-handler</span></a> to resource.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2062,7 +2062,7 @@ can push <code class="docutils literal"><span class="pre">'get'</span></code> as
 
 <dl class="class">
 <dt id="aiohttp.web.PlainResource">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">PlainResource</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#PlainResource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.PlainResource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">PlainResource</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#PlainResource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.PlainResource" title="Permalink to this definition"></a></dt>
 <dd><p>A new-style resource, inherited from <a class="reference internal" href="#aiohttp.web.Resource" title="aiohttp.web.Resource"><code class="xref py py-class docutils literal"><span class="pre">Resource</span></code></a>.</p>
 <p>The class corresponds to resources with plain-text matching,
 <code class="docutils literal"><span class="pre">'/path/to'</span></code> for example.</p>
@@ -2070,7 +2070,7 @@ can push <code class="docutils literal"><span class="pre">'get'</span></code> as
 
 <dl class="class">
 <dt id="aiohttp.web.DynamicResource">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">DynamicResource</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#DynamicResource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.DynamicResource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">DynamicResource</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#DynamicResource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.DynamicResource" title="Permalink to this definition"></a></dt>
 <dd><p>A new-style resource, inherited from <a class="reference internal" href="#aiohttp.web.Resource" title="aiohttp.web.Resource"><code class="xref py py-class docutils literal"><span class="pre">Resource</span></code></a>.</p>
 <p>The class corresponds to resources with
 <a class="reference internal" href="web.html#aiohttp-web-variable-handler"><span>variable</span></a> matching,
@@ -2079,7 +2079,7 @@ e.g. <code class="docutils literal"><span class="pre">'/path/{to}/{param}'</span
 
 <dl class="class">
 <dt id="aiohttp.web.ResourceAdapter">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">ResourceAdapter</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#ResourceAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.ResourceAdapter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">ResourceAdapter</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#ResourceAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.ResourceAdapter" title="Permalink to this definition"></a></dt>
 <dd><p>An adapter for old-style routes.</p>
 <p>The adapter is used by <code class="docutils literal"><span class="pre">router.register_route()</span></code> call, the method
 is deprecated and will be removed eventually.</p>
@@ -2087,7 +2087,7 @@ is deprecated and will be removed eventually.</p>
 
 </div>
 <div class="section" id="route">
-<span id="aiohttp-web-route"></span><h3>Route<a class="headerlink" href="#route" title="Permalink to this headline">¶</a></h3>
+<span id="aiohttp-web-route"></span><h3>Route<a class="headerlink" href="#route" title="Permalink to this headline"></a></h3>
 <p>Route has <em>HTTP method</em> (wildcard <code class="docutils literal"><span class="pre">'*'</span></code> is an option),
 <a class="reference internal" href="glossary.html#term-web-handler"><span class="xref std std-term">web-handler</span></a> and optional <em>expect handler</em>.</p>
 <p>Every route belong to some resource.</p>
@@ -2111,35 +2111,35 @@ rewritten eventually.</p>
 <a class="reference internal" href="#aiohttp.web.ResourceRoute" title="aiohttp.web.ResourceRoute"><code class="xref py py-class docutils literal"><span class="pre">ResourceRoute</span></code></a> only.</p>
 <dl class="class">
 <dt id="aiohttp.web.AbstractRoute">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">AbstractRoute</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#AbstractRoute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.AbstractRoute" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">AbstractRoute</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#AbstractRoute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.AbstractRoute" title="Permalink to this definition"></a></dt>
 <dd><p>Base class for routes served by <a class="reference internal" href="#aiohttp.web.UrlDispatcher" title="aiohttp.web.UrlDispatcher"><code class="xref py py-class docutils literal"><span class="pre">UrlDispatcher</span></code></a>.</p>
 <dl class="attribute">
 <dt id="aiohttp.web.AbstractRoute.method">
-<code class="descname">method</code><a class="headerlink" href="#aiohttp.web.AbstractRoute.method" title="Permalink to this definition">¶</a></dt>
+<code class="descname">method</code><a class="headerlink" href="#aiohttp.web.AbstractRoute.method" title="Permalink to this definition"></a></dt>
 <dd><p>HTTP method handled by the route, e.g. <em>GET</em>, <em>POST</em> etc.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.AbstractRoute.handler">
-<code class="descname">handler</code><a class="headerlink" href="#aiohttp.web.AbstractRoute.handler" title="Permalink to this definition">¶</a></dt>
+<code class="descname">handler</code><a class="headerlink" href="#aiohttp.web.AbstractRoute.handler" title="Permalink to this definition"></a></dt>
 <dd><p><a class="reference internal" href="web.html#aiohttp-web-handler"><span>handler</span></a> that processes the route.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.AbstractRoute.name">
-<code class="descname">name</code><a class="headerlink" href="#aiohttp.web.AbstractRoute.name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">name</code><a class="headerlink" href="#aiohttp.web.AbstractRoute.name" title="Permalink to this definition"></a></dt>
 <dd><p>Name of the route, always equals to name of resource which owns the route.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.AbstractRoute.resource">
-<code class="descname">resource</code><a class="headerlink" href="#aiohttp.web.AbstractRoute.resource" title="Permalink to this definition">¶</a></dt>
+<code class="descname">resource</code><a class="headerlink" href="#aiohttp.web.AbstractRoute.resource" title="Permalink to this definition"></a></dt>
 <dd><p>Resource instance which holds the route.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="aiohttp.web.AbstractRoute.url">
-<code class="descname">url</code><span class="sig-paren">(</span><em>*</em>, <em>query=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#AbstractRoute.url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.AbstractRoute.url" title="Permalink to this definition">¶</a></dt>
+<code class="descname">url</code><span class="sig-paren">(</span><em>*</em>, <em>query=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#AbstractRoute.url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.AbstractRoute.url" title="Permalink to this definition"></a></dt>
 <dd><p>Abstract method for constructing url handled by the route.</p>
 <p><em>query</em> is a mapping or list of <em>(name, value)</em> pairs for
 specifying <em>query</em> part of url (parameter is processed by
@@ -2155,7 +2155,7 @@ you should use <code class="xref py py-meth docutils literal"><span class="pre">
 
 <dl class="method">
 <dt id="aiohttp.web.AbstractRoute.handle_expect_header">
-<em class="property">coroutine </em><code class="descname">handle_expect_header</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#AbstractRoute.handle_expect_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.AbstractRoute.handle_expect_header" title="Permalink to this definition">¶</a></dt>
+<em class="property">coroutine </em><code class="descname">handle_expect_header</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#AbstractRoute.handle_expect_header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.AbstractRoute.handle_expect_header" title="Permalink to this definition"></a></dt>
 <dd><p><code class="docutils literal"><span class="pre">100-continue</span></code> handler.</p>
 </dd></dl>
 
@@ -2163,17 +2163,17 @@ you should use <code class="xref py py-meth docutils literal"><span class="pre">
 
 <dl class="class">
 <dt id="aiohttp.web.ResourceRoute">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">ResourceRoute</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#ResourceRoute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.ResourceRoute" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">ResourceRoute</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#ResourceRoute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.ResourceRoute" title="Permalink to this definition"></a></dt>
 <dd><p>The route class for handling different HTTP methods for <a class="reference internal" href="#aiohttp.web.Resource" title="aiohttp.web.Resource"><code class="xref py py-class docutils literal"><span class="pre">Resource</span></code></a>.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="aiohttp.web.PlainRoute">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">PlainRoute</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#PlainRoute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.PlainRoute" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">PlainRoute</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#PlainRoute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.PlainRoute" title="Permalink to this definition"></a></dt>
 <dd><p>The route class for handling plain <em>URL path</em>, e.g. <code class="docutils literal"><span class="pre">&quot;/a/b/c&quot;</span></code></p>
 <dl class="method">
 <dt id="aiohttp.web.PlainRoute.url">
-<code class="descname">url</code><span class="sig-paren">(</span><em>*</em>, <em>parts</em>, <em>query=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#PlainRoute.url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.PlainRoute.url" title="Permalink to this definition">¶</a></dt>
+<code class="descname">url</code><span class="sig-paren">(</span><em>*</em>, <em>parts</em>, <em>query=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#PlainRoute.url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.PlainRoute.url" title="Permalink to this definition"></a></dt>
 <dd><p>Construct url, doesn&#8217;t accepts extra parameters:</p>
 <div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">route</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
 <span class="go">&#39;/a/b/c/?d=1&amp;e=2&#39;</span>
@@ -2185,12 +2185,12 @@ you should use <code class="xref py py-meth docutils literal"><span class="pre">
 
 <dl class="class">
 <dt id="aiohttp.web.DynamicRoute">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">DynamicRoute</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#DynamicRoute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.DynamicRoute" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">DynamicRoute</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#DynamicRoute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.DynamicRoute" title="Permalink to this definition"></a></dt>
 <dd><p>The route class for handling <a class="reference internal" href="web.html#aiohttp-web-variable-handler"><span>variable
 path</span></a>, e.g. <code class="docutils literal"><span class="pre">&quot;/a/{name1}/{name2}&quot;</span></code></p>
 <dl class="method">
 <dt id="aiohttp.web.DynamicRoute.url">
-<code class="descname">url</code><span class="sig-paren">(</span><em>*</em>, <em>parts</em>, <em>query=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#DynamicRoute.url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.DynamicRoute.url" title="Permalink to this definition">¶</a></dt>
+<code class="descname">url</code><span class="sig-paren">(</span><em>*</em>, <em>parts</em>, <em>query=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#DynamicRoute.url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.DynamicRoute.url" title="Permalink to this definition"></a></dt>
 <dd><p>Construct url with given <em>dynamic parts</em>:</p>
 <div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">route</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="n">parts</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;name1&#39;</span><span class="p">:</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;name2&#39;</span><span class="p">:</span> <span class="s1">&#39;c&#39;</span><span class="p">},</span>
 <span class="go">              query={&#39;d&#39;: 1, &#39;e&#39;: 2})</span>
@@ -2203,12 +2203,12 @@ path</span></a>, e.g. <code class="docutils literal"><span class="pre">&quot;/a/
 
 <dl class="class">
 <dt id="aiohttp.web.StaticRoute">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">StaticRoute</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#StaticRoute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StaticRoute" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">StaticRoute</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#StaticRoute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StaticRoute" title="Permalink to this definition"></a></dt>
 <dd><p>The route class for handling static files, created by
 <a class="reference internal" href="#aiohttp.web.UrlDispatcher.add_static" title="aiohttp.web.UrlDispatcher.add_static"><code class="xref py py-meth docutils literal"><span class="pre">UrlDispatcher.add_static()</span></code></a> call.</p>
 <dl class="method">
 <dt id="aiohttp.web.StaticRoute.url">
-<code class="descname">url</code><span class="sig-paren">(</span><em>*</em>, <em>filename</em>, <em>query=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#StaticRoute.url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StaticRoute.url" title="Permalink to this definition">¶</a></dt>
+<code class="descname">url</code><span class="sig-paren">(</span><em>*</em>, <em>filename</em>, <em>query=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#StaticRoute.url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.StaticRoute.url" title="Permalink to this definition"></a></dt>
 <dd><p>Construct url for given <em>filename</em>:</p>
 <div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">route</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;img/logo.png&#39;</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;param&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
 <span class="go">&#39;/path/to/static/img/logo.png?param=1&#39;</span>
@@ -2220,7 +2220,7 @@ path</span></a>, e.g. <code class="docutils literal"><span class="pre">&quot;/a/
 
 </div>
 <div class="section" id="matchinfo">
-<h3>MatchInfo<a class="headerlink" href="#matchinfo" title="Permalink to this headline">¶</a></h3>
+<h3>MatchInfo<a class="headerlink" href="#matchinfo" title="Permalink to this headline"></a></h3>
 <p>After route matching web application calls found handler if any.</p>
 <p>Matching result can be accessible from handler as
 <a class="reference internal" href="#aiohttp.web.Request.match_info" title="aiohttp.web.Request.match_info"><code class="xref py py-attr docutils literal"><span class="pre">Request.match_info</span></code></a> attribute.</p>
@@ -2229,24 +2229,24 @@ path</span></a>, e.g. <code class="docutils literal"><span class="pre">&quot;/a/
 <a class="reference internal" href="#aiohttp.web.UrlDispatcher" title="aiohttp.web.UrlDispatcher"><code class="xref py py-class docutils literal"><span class="pre">UrlDispatcher</span></code></a> router).</p>
 <dl class="class">
 <dt id="aiohttp.web.UrlMappingMatchInfo">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">UrlMappingMatchInfo</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlMappingMatchInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlMappingMatchInfo" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">UrlMappingMatchInfo</code><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#UrlMappingMatchInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.UrlMappingMatchInfo" title="Permalink to this definition"></a></dt>
 <dd><p>Inherited from <a class="reference external" href="http://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">dict</span></code></a> and <code class="xref py py-class docutils literal"><span class="pre">AbstractMatchInfo</span></code>. Dict
 items are filled by matching info and is <a class="reference internal" href="glossary.html#term-resource"><span class="xref std std-term">resource</span></a>-specific.</p>
 <dl class="attribute">
 <dt id="aiohttp.web.UrlMappingMatchInfo.expect_handler">
-<code class="descname">expect_handler</code><a class="headerlink" href="#aiohttp.web.UrlMappingMatchInfo.expect_handler" title="Permalink to this definition">¶</a></dt>
+<code class="descname">expect_handler</code><a class="headerlink" href="#aiohttp.web.UrlMappingMatchInfo.expect_handler" title="Permalink to this definition"></a></dt>
 <dd><p>A coroutine for handling <code class="docutils literal"><span class="pre">100-continue</span></code>.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.UrlMappingMatchInfo.handler">
-<code class="descname">handler</code><a class="headerlink" href="#aiohttp.web.UrlMappingMatchInfo.handler" title="Permalink to this definition">¶</a></dt>
+<code class="descname">handler</code><a class="headerlink" href="#aiohttp.web.UrlMappingMatchInfo.handler" title="Permalink to this definition"></a></dt>
 <dd><p>A coroutine for handling request.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.UrlMappingMatchInfo.route">
-<code class="descname">route</code><a class="headerlink" href="#aiohttp.web.UrlMappingMatchInfo.route" title="Permalink to this definition">¶</a></dt>
+<code class="descname">route</code><a class="headerlink" href="#aiohttp.web.UrlMappingMatchInfo.route" title="Permalink to this definition"></a></dt>
 <dd><p><code class="xref py py-class docutils literal"><span class="pre">Route</span></code> instance for url matching.</p>
 </dd></dl>
 
@@ -2254,10 +2254,10 @@ items are filled by matching info and is <a class="reference internal" href="glo
 
 </div>
 <div class="section" id="view">
-<h3>View<a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h3>
+<h3>View<a class="headerlink" href="#view" title="Permalink to this headline"></a></h3>
 <dl class="class">
 <dt id="aiohttp.web.View">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">View</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#View"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.View" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">View</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web_urldispatcher.html#View"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.View" title="Permalink to this definition"></a></dt>
 <dd><p>Inherited from <code class="xref py py-class docutils literal"><span class="pre">AbstractView</span></code>.</p>
 <p>Base class for class based views. Implementations should derive from
 <a class="reference internal" href="#aiohttp.web.View" title="aiohttp.web.View"><code class="xref py py-class docutils literal"><span class="pre">View</span></code></a> and override methods for handling HTTP verbs like
@@ -2289,7 +2289,7 @@ processing.</td>
 </table>
 <dl class="attribute">
 <dt id="aiohttp.web.View.request">
-<code class="descname">request</code><a class="headerlink" href="#aiohttp.web.View.request" title="Permalink to this definition">¶</a></dt>
+<code class="descname">request</code><a class="headerlink" href="#aiohttp.web.View.request" title="Permalink to this definition"></a></dt>
 <dd><p>Request sent to view&#8217;s constructor, read-only property.</p>
 </dd></dl>
 
@@ -2305,33 +2305,33 @@ processing.</td>
 </div>
 </div>
 <div class="section" id="utilities">
-<h2>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h2>
+<h2>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline"></a></h2>
 <dl class="class">
 <dt id="aiohttp.web.FileField">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">FileField</code><a class="headerlink" href="#aiohttp.web.FileField" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">FileField</code><a class="headerlink" href="#aiohttp.web.FileField" title="Permalink to this definition"></a></dt>
 <dd><p>A <code class="xref py py-class docutils literal"><span class="pre">namedtuple</span></code> instance that is returned as
 multidict value by <a class="reference internal" href="#aiohttp.web.Request.POST" title="aiohttp.web.Request.POST"><code class="xref py py-meth docutils literal"><span class="pre">Request.POST()</span></code></a> if field is uploaded file.</p>
 <dl class="attribute">
 <dt id="aiohttp.web.FileField.name">
-<code class="descname">name</code><a class="headerlink" href="#aiohttp.web.FileField.name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">name</code><a class="headerlink" href="#aiohttp.web.FileField.name" title="Permalink to this definition"></a></dt>
 <dd><p>Field name</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.FileField.filename">
-<code class="descname">filename</code><a class="headerlink" href="#aiohttp.web.FileField.filename" title="Permalink to this definition">¶</a></dt>
+<code class="descname">filename</code><a class="headerlink" href="#aiohttp.web.FileField.filename" title="Permalink to this definition"></a></dt>
 <dd><p>File name as specified by uploading (client) side.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.FileField.file">
-<code class="descname">file</code><a class="headerlink" href="#aiohttp.web.FileField.file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">file</code><a class="headerlink" href="#aiohttp.web.FileField.file" title="Permalink to this definition"></a></dt>
 <dd><p>An <a class="reference external" href="http://docs.python.org/3/library/io.html#io.IOBase" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">io.IOBase</span></code></a> instance with content of uploaded file.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.FileField.content_type">
-<code class="descname">content_type</code><a class="headerlink" href="#aiohttp.web.FileField.content_type" title="Permalink to this definition">¶</a></dt>
+<code class="descname">content_type</code><a class="headerlink" href="#aiohttp.web.FileField.content_type" title="Permalink to this definition"></a></dt>
 <dd><p><em>MIME type</em> of uploaded file, <code class="docutils literal"><span class="pre">'text/plain'</span></code> by default.</p>
 </dd></dl>
 
@@ -2343,7 +2343,7 @@ multidict value by <a class="reference internal" href="#aiohttp.web.Request.POST
 
 <dl class="function">
 <dt id="aiohttp.web.run_app">
-<code class="descclassname">aiohttp.web.</code><code class="descname">run_app</code><span class="sig-paren">(</span><em>app</em>, <em>*</em>, <em>host='0.0.0.0'</em>, <em>port=None</em>, <em>loop=None</em>, <em>shutdown_timeout=60.0</em>, <em>ssl_context=None</em>, <em>print=print</em>, <em>backlog=128</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#run_app"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.run_app" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">aiohttp.web.</code><code class="descname">run_app</code><span class="sig-paren">(</span><em>app</em>, <em>*</em>, <em>host='0.0.0.0'</em>, <em>port=None</em>, <em>loop=None</em>, <em>shutdown_timeout=60.0</em>, <em>ssl_context=None</em>, <em>print=print</em>, <em>backlog=128</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aiohttp/web.html#run_app"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.run_app" title="Permalink to this definition"></a></dt>
 <dd><p>A utility function for running an application, serving it until
 keyboard interrupt and performing a
 <a class="reference internal" href="web.html#aiohttp-web-graceful-shutdown"><span>Graceful shutdown</span></a>.</p>
@@ -2386,26 +2386,26 @@ connections (<code class="docutils literal"><span class="pre">128</span></code> 
 
 </div>
 <div class="section" id="constants">
-<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline"></a></h2>
 <dl class="class">
 <dt id="aiohttp.web.ContentCoding">
-<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">ContentCoding</code><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#ContentCoding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.ContentCoding" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">aiohttp.web.</code><code class="descname">ContentCoding</code><a class="reference internal" href="_modules/aiohttp/web_reqrep.html#ContentCoding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aiohttp.web.ContentCoding" title="Permalink to this definition"></a></dt>
 <dd><p>An <a class="reference external" href="http://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.5)"><code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></a> class of available Content Codings.</p>
 <dl class="attribute">
 <dt id="aiohttp.web.ContentCoding.deflate">
-<code class="descname">deflate</code><a class="headerlink" href="#aiohttp.web.ContentCoding.deflate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">deflate</code><a class="headerlink" href="#aiohttp.web.ContentCoding.deflate" title="Permalink to this definition"></a></dt>
 <dd><p><em>DEFLATE compression</em></p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.ContentCoding.gzip">
-<code class="descname">gzip</code><a class="headerlink" href="#aiohttp.web.ContentCoding.gzip" title="Permalink to this definition">¶</a></dt>
+<code class="descname">gzip</code><a class="headerlink" href="#aiohttp.web.ContentCoding.gzip" title="Permalink to this definition"></a></dt>
 <dd><p><em>GZIP compression</em></p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="aiohttp.web.ContentCoding.identity">
-<code class="descname">identity</code><a class="headerlink" href="#aiohttp.web.ContentCoding.identity" title="Permalink to this definition">¶</a></dt>
+<code class="descname">identity</code><a class="headerlink" href="#aiohttp.web.ContentCoding.identity" title="Permalink to this definition"></a></dt>
 <dd><p><em>no compression</em></p>
 </dd></dl>
 

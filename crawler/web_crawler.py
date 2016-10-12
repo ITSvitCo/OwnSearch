@@ -2,7 +2,7 @@
 
 import asyncio
 from html.parser import HTMLParser
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 import aiohttp
 import async_timeout
@@ -20,7 +20,8 @@ class DataLinksHTMLParser(HTMLParser):
         self.base_url = base_url
         self.ignore_data = []
         self.data = []
-        self.links = set()
+        self.internal_links = set()
+        self.external_links = set()
         super().__init__()
 
     def _normalize_link(self, link):
@@ -35,6 +36,12 @@ class DataLinksHTMLParser(HTMLParser):
         else:
             return link
 
+    def _is_internal(self, link):
+        """Compare the link and base url netloc."""
+        bnetloc = urlparse(self.base_url)[1]
+        netloc = urlparse(link)[1]
+        return bnetloc == netloc
+
     def handle_starttag(self, tag, attrs):
         """Seek for script and links tags."""
         if tag in ('script', 'style'):
@@ -45,7 +52,10 @@ class DataLinksHTMLParser(HTMLParser):
                 if attr == 'href' and value is not None:
                     link = self._normalize_link(value)
                     if link:
-                        self.links.add(link)
+                        if self._is_internal(link):
+                            self.internal_links.add(link)
+                        else:
+                            self.external_links.add(link)
 
     def handle_endtag(self, tag):
         """Seek for close script tag."""
@@ -86,7 +96,7 @@ class WebCrawler:
         while True:
             url = await self.url_queue.get()
             try:
-                text, internal, external = await self._parse_links(url)
+                text, internal, external = await self._parse_url(url)
             except InvalidURL:
                 continue
 
@@ -104,7 +114,7 @@ class WebCrawler:
             # print(url)
             await self.text_queue.put((url, text))
 
-    async def _parse_links(self, url):
+    async def _parse_url(self, url):
         """Parse web page content for external & internal links."""
         parser = DataLinksHTMLParser(base_url=url)
 
@@ -121,11 +131,13 @@ class WebCrawler:
                     except (ValueError,
                             aiohttp.errors.ClientResponseError,
                             aiohttp.errors.ClientRequestError,
-                            aiohttp.errors.ClientOSError):
+                            aiohttp.errors.ClientOSError,
+ +                          aiohttp.errors.ContentEncodingError):
                         # ValueError: Host could not be detected.
                         # aiohttp.errors.ClientResponseError
                         # Can not write request body for
                         # [Errno 10060] Cannot connect to host
+                        # 400, message='deflate
                         raise InvalidURL()
                     else:
                         if resp is None or resp.status != 200:
@@ -134,10 +146,9 @@ class WebCrawler:
                         try:
                             # TODO: detect charset without chardet!!!
                             resp_text = await resp.text("utf-8")
+
                         except UnicodeDecodeError:
                             raise InvalidURL()
-
-
 
                     finally:
                         if resp is not None:
@@ -150,21 +161,24 @@ class WebCrawler:
         parser.feed(resp_text)
         # TODO: recognize internal/external urls
         text = ' '.join(parser.data)
-        internal = parser.links
-        external = set()
+        internal = parser.internal_links
+        external = parser.external_links
 
         parser.close()
         return text, internal, external
 
     async def _feed_consumer(self):
+        """Feed consumer."""
         while self.consumer is not None:
             url, text = await self.text_queue.get()
             self.consumer(text, 'Title', url)
 
     def create_workers(self):
+        """Create crawler workers."""
         for _ in range(self.workers):
             self.loop.create_task(self.worker())
         self.loop.create_task(self._feed_consumer())
 
     def register_consumer(self, consumer):
+        """Register consumer."""
         self.consumer = consumer
