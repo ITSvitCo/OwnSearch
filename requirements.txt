@@ -1,0 +1,5 @@
+aiohttp_jinja2
+pyyaml
+pytest-aiohttp
+pep8
+pep257
