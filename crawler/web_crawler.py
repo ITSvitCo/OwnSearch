@@ -132,7 +132,7 @@ class WebCrawler:
                             aiohttp.errors.ClientResponseError,
                             aiohttp.errors.ClientRequestError,
                             aiohttp.errors.ClientOSError,
- +                          aiohttp.errors.ContentEncodingError):
+                            aiohttp.errors.ContentEncodingError):
                         # ValueError: Host could not be detected.
                         # aiohttp.errors.ClientResponseError
                         # Can not write request body for
