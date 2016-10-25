@@ -1,7 +1,7 @@
 OwnSearch
 =========
 
-.. image:: https://raw.github.com/ITSvitCo/OwnSearch/develop/docs/spider128x128.png
+.. image:: https://raw.github.com/ITSvitCo/OwnSearch/master/docs/spider128x128.png
   :alt: OwnSearch logo
 
 Overview
@@ -57,7 +57,7 @@ Run OwnSearch
   python -m own_search
 
 
-.. image:: https://raw.github.com/ITSvitCo/OwnSearch/develop/docs/screen_shot2.png
+.. image:: https://raw.github.com/ITSvitCo/OwnSearch/master/docs/screen_shot2.png
   :height: 725px
   :width: 480px
   :alt: OwnSearch
