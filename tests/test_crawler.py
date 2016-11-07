@@ -6,22 +6,37 @@ from threading import Thread
 
 import pytest
 
-from crawler.web_crawler import DataLinksHTMLParser, WebCrawler
+from crawler.web_crawler import DataLinksHTMLParser, WebCrawler, InvalidURL
 
 
 class StaticServer(Thread):
     PORT = 8081
+    handler = http.server.SimpleHTTPRequestHandler
+
+    def __init__(self, *args, **kwargs):
+        self.httpd = None
+        socketserver.TCPServer.allow_reuse_address = True
+        super().__init__(*args, **kwargs)
 
     def run(self):
-        Handler = http.server.SimpleHTTPRequestHandler
-        httpd = socketserver.TCPServer(("", self.PORT), Handler)
-        httpd.serve_forever()
+        self.httpd = socketserver.TCPServer(("", self.PORT), self.handler)
+        self.httpd.serve_forever()
+
+    def shutdown(self):
+        if self.httpd is not None:
+            self.httpd.shutdown()
 
 
 @pytest.fixture(scope="module")
-def sserver():
+def sserver(request):
     ss = StaticServer(daemon=True)
+
+    def tear_down():
+        ss.shutdown()
+
     ss.start()
+
+    request.addfinalizer(tear_down)
     return ss
 
 
@@ -36,9 +51,13 @@ def loop():
     loop.close()
 
 
+def ignore_new_line(text):
+    return text.replace('\r\n', ' ').replace('\n', ' ')
+
+
 def test_HTML_parser():
     """Check html parser."""
-    base_url = 'http://aiohttp.readthedocs.io/en/stable/web_reference.html'
+    base_url = 'http://itsvit.com/portfolio/'
     parser = DataLinksHTMLParser(base_url)
     with open('tests/example.html', 'r') as f:
         html = f.read()
@@ -48,90 +67,101 @@ def test_HTML_parser():
         expected_data = json.load(f2)
 
     with open('tests/example.links', 'r') as f3:
-        expected_links = set(json.load(f3))
+        internal_links, external_links = json.load(f3)
 
-    assert parser.data == expected_data
-    all_links = parser.internal_links.union(parser.external_links)
-    assert all_links == expected_links
+    title = parser.title
+    data = parser.data
+
+    assert title == 'IT Svit | Our Portfolio'
+    assert data == expected_data
+    assert set(internal_links) == parser.internal_links
+    assert set(external_links) == parser.external_links
 
 
 def test_parse_url(loop, sserver):
     """Test end to end crawling."""
     exp_internal = {
-        'http://127.0.0.1:8081/tests/_static/pygments.css',
-        'http://127.0.0.1:8081/tests/server.html',
-        'http://127.0.0.1:8081/tests/changes.html',
-        'http://127.0.0.1:8081/tests/tutorial.html',
-        'http://127.0.0.1:8081/tests/testing.html',
-        'http://127.0.0.1:8081/tests/multipart.html',
-        'http://127.0.0.1:8081/tests/example.html',
-        'http://127.0.0.1:8081/tests/new_router.html',
-        'http://127.0.0.1:8081/tests/_modules/aiohttp/web.html',
-        'http://127.0.0.1:8081/tests/glossary.html',
-        'http://127.0.0.1:8081/tests/_static/alabaster.css',
-        'http://127.0.0.1:8081/tests/abc.html',
-        'http://127.0.0.1:8081/tests/streams.html',
-        'http://127.0.0.1:8081/tests/client.html',
-        'http://127.0.0.1:8081/tests/_static/aiohttp-icon.ico',
-        'http://127.0.0.1:8081/tests/api.html',
-        'http://127.0.0.1:8081/tests/logging.html',
-        'http://127.0.0.1:8081/tests/_sources/web_reference.txt',
-        'http://127.0.0.1:8081/tests/_modules/aiohttp/web_ws.html',
-        'http://127.0.0.1:8081/tests/_static/custom.css',
-        'http://127.0.0.1:8081/tests/_modules/aiohttp/web_reqrep.html',
-        'http://127.0.0.1:8081/tests/faq.html',
-        'http://127.0.0.1:8081/tests/contributing.html',
-        'http://127.0.0.1:8081/tests/client_reference.html',
-        'http://127.0.0.1:8081/tests/web.html',
-        'http://127.0.0.1:8081/tests/_modules/aiohttp/web_urldispatcher.html',
-        'http://127.0.0.1:8081/tests/index.html',
-        'http://127.0.0.1:8081/tests/gunicorn.html',
+        "http://itsvit.com/our-services/web-development/",
+        "http://itsvit.com/our-services/documentation/",
+        "http://itsvit.com/wp-content/themes/itsvit/css/fonts.css",
+        "http://itsvit.com/wp-content/themes/itsvit/style.css",
+        "http://itsvit.com/wp-content/plugins/recent-tweets-widget/"
+        "tp_twitter_plugin.css?ver=1.0",
+        "http://itsvit.com/wp-content/themes/itsvit/libs/owl.carousel/owl/"
+        "owl.carousel.css",
+        "http://itsvit.com/privacy-policy/",
+        "http://itsvit.com/our-services/big-data-and-data-science/",
+        "http://itsvit.com/partners/",
+        "http://itsvit.com/wp-content/plugins/wp-paginate/"
+        "wp-paginate.css?ver=1.3.1",
+        "http://itsvit.com/terms-of-use/",
+        "http://itsvit.com/wp-content/themes/itsvit/img/favicon/"
+        "favicon_ITSvit.ico",
+        "http://itsvit.com/wp-content/themes/itsvit/img/favicon/"
+        "d-logo-sketch-small.png",
+        "http://itsvit.com/about-it-svit/",
+        "http://itsvit.com/our-services/design/",
+        "http://itsvit.com/wp-content/themes/itsvit/libs/magnific/"
+        "magnific-popup.css",
+        "http://itsvit.com/",
+        "http://itsvit.com/blog/",
+        "http://itsvit.com/sitemap/",
+        "http://itsvit.com/contacts/",
+        "http://itsvit.com/our-services/quality-assurance-and-automation/",
+        "http://itsvit.com/wp-content/themes/itsvit/libs/font-awesome/css/"
+        "font-awesome.min.css",
+        "http://itsvit.com/wp-content/themes/itsvit/css/media.css",
+        "http://itsvit.com/portfolio/",
+        "http://itsvit.com/our-services/devops/",
+        "http://itsvit.com/wp-content/themes/itsvit/libs/bootstrap/css/"
+        "bootstrap-grid.min.css",
+        "http://itsvit.com/wp-content/themes/itsvit/img/favicon/"
+        "default-favicon.png",
+        "http://itsvit.com/wp-content/plugins/contact-form-7/includes/css/"
+        "styles.css?ver=4.5.1",
     }
     exp_external = {
-        'https://github.com/KeepSafe/aiohttp',
-        'http://docs.python.org/3/library/http.cookies.html',
-        'https://media.readthedocs.org/css/readthedocs-doc-embed.css',
-        'http://disqus.com/?ref_noscript',
-        'https://multidict.readthedocs.io/en/stable/multidict.html',
-        'http://docs.python.org/3/library/stdtypes.html',
-        'https://codecov.io/github/KeepSafe/aiohttp',
-        'http://aiohttp.readthedocs.io/en/stable/web_reference.html',
-        'http://docs.python.org/3/library/datetime.html',
-        'http://docs.python.org/3/library/collections.abc.html',
-        'http://docs.python.org/3/library/urllib.parse.html',
-        'http://docs.python.org/3/library/ssl.html',
-        'http://docs.python.org/3/library/logging.html',
-        'https://media.readthedocs.org/css/badge_only.css',
-        'http://sphinx-doc.org/',
-        'http://docs.python.org/3/library/io.html',
-        'http://docs.python.org/3/library/asyncio-task.html',
-        'http://docs.python.org/3/library/enum.html',
-        'https://tools.ietf.org/html/rfc2616.html',
-        'https://github.com/bitprophet/alabaster',
-        'http://disqus.com',
-        'http://docs.python.org/3/library/types.html',
-        'http://docs.python.org/3/library/exceptions.html',
-        'http://docs.python.org/3/library/asyncio-protocol.html',
-        'http://docs.python.org/3/library/json.html',
-        'http://docs.python.org/3/library/asyncio-eventloop.html',
-        'http://docs.python.org/3/library/pathlib.html',
-        'http://docs.python.org/3/library/asyncio-eventloops.html',
-        'https://travis-ci.org/KeepSafe/aiohttp',
-        'http://docs.python.org/3/library/functions.html',
+        "https://plus.google.com/+ItsvitOrg/videos",
+        "https://www.linkedin.com/company/it-svit?trk=top_nav_home",
+        "https://www.instagram.com/itsvit/",
+        "http://fonts.googleapis.com/css?family=Indie+Flower&ver=4.5.4",
+        "https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.7.4/css/"
+        "jquery.mmenu.all.css",
+        "https://vk.com/itsvit", "https://www.facebook.com/IT.Svit.Team",
+        "https://github.com/ITSvitCo",
+        "https://twitter.com/itsvit",
+        "https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto",
     }
 
-    async def do_test():
+    @asyncio.coroutine
+    def do_test():
         wc = WebCrawler(loop=loop)
-        data, internal, external = await wc._parse_url(
+        title, data, internal, external = yield from wc._parse_url(
                 'http://127.0.0.1:{}/tests/example.html'.format(
-                        StaticServer.PORT))
+                        StaticServer.PORT),
+                base_url='http://itsvit.com/portfolio/')
 
         with open('tests/example.data', 'r') as f:
             e = json.load(f)
             exp_data = ' '.join(e)
 
-        assert data == exp_data
+        assert title == 'IT Svit | Our Portfolio'
+        assert ignore_new_line(data) == ignore_new_line(exp_data)
         assert internal == exp_internal
         assert external == exp_external
+
+    loop.run_until_complete(do_test())
+
+
+def test_parse_url_css(loop, sserver):
+    """Test end to end crawling."""
+
+    @asyncio.coroutine
+    def do_test():
+        with pytest.raises(InvalidURL):
+            wc = WebCrawler(loop=loop)
+            title, data, internal, external = yield from wc._parse_url(
+                    'http://127.0.0.1:{}/tests/owl.carousel.css'.format(
+                            StaticServer.PORT))
 
     loop.run_until_complete(do_test())

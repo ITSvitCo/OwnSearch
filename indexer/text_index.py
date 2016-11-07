@@ -46,7 +46,7 @@ class TextIndex:
         vector = cleared_text.split(' ')
         return vector
 
-    def index_document(self, summary, title, link):
+    def index_document(self, link, title, summary):
         """Add document to index."""
         text = title + '. ' + summary
         vector = self._vectorize(text)

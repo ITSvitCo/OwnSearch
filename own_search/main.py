@@ -24,7 +24,8 @@ def load_config(fname):
     return data
 
 
-async def init(loop):
+@asyncio.coroutine
+def init(loop):
     """Init application."""
     # load config from yaml file in current dir
     conf = load_config(str(pathlib.Path('.') / 'config' / 'own_search.yaml'))
@@ -38,7 +39,7 @@ async def init(loop):
     app['text_index'] = text_index
 
     crawler = WebCrawler(loop=loop)
-    await crawler.url_queue.put(conf['start_url'])
+    yield from crawler.url_queue.put(conf['start_url'])
     crawler.create_workers()
     crawler.register_consumer(text_index.index_document)
 

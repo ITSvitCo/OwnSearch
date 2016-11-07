@@ -1,4 +1,5 @@
 aiohttp_jinja2
+cchardet
 pyyaml
 pytest-aiohttp
 pep8

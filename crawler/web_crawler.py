@@ -7,6 +7,11 @@ from urllib.parse import urljoin, urlparse
 import aiohttp
 import async_timeout
 
+ALLOWED_STATUS_CODES = (200,)
+ALLOWED_MIME_TYPES = ('text/plain',
+                      'text/html',
+                      )
+
 
 class InvalidURL(RuntimeError):
     """Invalid error exception."""
@@ -19,7 +24,9 @@ class DataLinksHTMLParser(HTMLParser):
         """Init variables."""
         self.base_url = base_url
         self.ignore_data = []
+        self.capture_title = False
         self.data = []
+        self.title = ''
         self.internal_links = set()
         self.external_links = set()
         super().__init__()
@@ -47,6 +54,9 @@ class DataLinksHTMLParser(HTMLParser):
         if tag in ('script', 'style'):
             self.ignore_data.append(tag)
 
+        elif tag == 'title':
+            self.capture_title = True
+
         elif tag in ('a', 'link'):
             for attr, value in attrs:
                 if attr == 'href' and value is not None:
@@ -66,12 +76,18 @@ class DataLinksHTMLParser(HTMLParser):
                 # Already closed tag
                 pass
 
+        elif tag == 'title':
+            self.capture_title = False
+
     def handle_data(self, data):
         """Store data."""
         if not self.ignore_data:
             data = data.strip()
             if data:
-                self.data.append(data)
+                if self.capture_title:
+                    self.title = data
+                else:
+                    self.data.append(data)
 
 
 class WebCrawler:
@@ -91,42 +107,45 @@ class WebCrawler:
         self.text_queue = asyncio.Queue()
         self.consumer = None
 
-    async def worker(self):
+    @asyncio.coroutine
+    def worker(self):
         """Crawl worker."""
         while True:
-            url = await self.url_queue.get()
+            url = yield from self.url_queue.get()
             try:
-                text, internal, external = await self._parse_url(url)
+                title, text, internal, external = \
+                    yield from self._parse_url(url)
             except InvalidURL:
                 continue
 
             new_internal = internal.difference(self.handled_urls)
             self.handled_urls.update(new_internal)
             for ni in new_internal:
-                await self.url_queue.put(ni)
+                yield from self.url_queue.put(ni)
 
             if not self.ignore_external:
                 new_external = external.difference(self.handled_urls)
                 self.handled_urls.update(new_external)
                 for ne in new_external:
-                    await self.url_queue.put(ne)
+                    yield from self.url_queue.put(ne)
 
             # print(url)
-            await self.text_queue.put((url, text))
+            yield from self.text_queue.put((url, title, text))
 
-    async def _parse_url(self, url):
+    @asyncio.coroutine
+    def _parse_url(self, url, base_url=None):
         """Parse web page content for external & internal links."""
-        parser = DataLinksHTMLParser(base_url=url)
+        if base_url is None:
+            base_url = url
+        parser = DataLinksHTMLParser(base_url=base_url)
 
         # TODO: add retry count
         try:
             with async_timeout.timeout(10):
-                async with aiohttp.ClientSession() as session:
+                with aiohttp.ClientSession() as session:
                     resp = None
                     try:
-                        resp = await session.get(url)
-                        # TODO: verify content type
-                        # TODO: list of valid status codes
+                        resp = yield from session.get(url)
 
                     except (ValueError,
                             aiohttp.errors.ClientResponseError,
@@ -140,12 +159,18 @@ class WebCrawler:
                         # 400, message='deflate
                         raise InvalidURL()
                     else:
-                        if resp is None or resp.status != 200:
+
+                        # Verify status code
+                        if resp is None \
+                                or resp.status not in ALLOWED_STATUS_CODES:
+                            raise InvalidURL()
+
+                        # Verify content type
+                        if resp.content_type not in ALLOWED_MIME_TYPES:
                             raise InvalidURL()
 
                         try:
-                            # TODO: detect charset without chardet!!!
-                            resp_text = await resp.text("utf-8")
+                            resp_text = yield from resp.text()
 
                         except UnicodeDecodeError:
                             raise InvalidURL()
@@ -159,19 +184,20 @@ class WebCrawler:
             raise InvalidURL()
 
         parser.feed(resp_text)
-        # TODO: recognize internal/external urls
+        title = parser.title
         text = ' '.join(parser.data)
         internal = parser.internal_links
         external = parser.external_links
 
         parser.close()
-        return text, internal, external
+        return title, text, internal, external
 
-    async def _feed_consumer(self):
+    @asyncio.coroutine
+    def _feed_consumer(self):
         """Feed consumer."""
         while self.consumer is not None:
-            url, text = await self.text_queue.get()
-            self.consumer(text, 'Title', url)
+            url, title, text = yield from self.text_queue.get()
+            self.consumer(url, title, text)
 
     def create_workers(self):
         """Create crawler workers."""
