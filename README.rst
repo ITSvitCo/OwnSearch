@@ -1,4 +1,4 @@
-OwnSearch1
+OwnSearch2
 =========
 
 .. image:: https://raw.github.com/ITSvitCo/OwnSearch/master/docs/spider128x128.png
